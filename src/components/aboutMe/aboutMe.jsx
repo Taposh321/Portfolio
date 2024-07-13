@@ -67,7 +67,7 @@ and user-friendly solutions. Let's bring your idea into reality.
 <div>
 <div className='min-w-[200px] photoContainer min-h-[200px]
  w-full max-w-[450px] max-h-[450px] bg-red-400  object-cover'>
-<img className='w-full h-full ' src="src/assets/photo/heroPhoto.png" alt="" /> 
+<img className='w-full h-full ' src="/src/assets/photo/heroPhoto.png" alt="" /> 
 </div>
 
     </div>   
