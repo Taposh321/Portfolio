@@ -59,7 +59,7 @@ and user-friendly solutions. Let's bring your idea into reality.
 </div> 
     </div>
 
-    <div className={`justify-center md:flex items-start
+    <div className={`justify-center md:flex items-start 
      md:items-center  ${viewHight<=600?'hidden':'flex'} 
      row-start-7 row-end-13 col-start-1 col-end-13
       md:col-start-7 md:col-end-13 md:row-start-1

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState=[
 {
-status:0
+status:'right-0'
 }
 ]
 
@@ -12,13 +12,13 @@ name:"model",
 initialState,
 reducers:{
     open:(state,action)=>{
-if(state[0].status==0){
-    state[0].status=1
+if(state[0].status=='right-[-100%]'){
+    state[0].status='right-0'
 }
     },
     close:(state,action)=>{
-        if(state[0].status==1){
-            state[0].status=0
+        if(state[0].status=='right-0'){
+            state[0].status='right-[-100%]'
         }
             },
         

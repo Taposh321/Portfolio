@@ -5,26 +5,25 @@ import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 
 
 function Project({img,features,type}){
-const [status,setStatus]=useState("hidden");
+const [status,setStatus]=useState(0);
 
     const Overlay=({s})=>{
       return(
         <>
-        <div className={`overlay ${s} absolute w-full h-full justify-center 
+        <div className={`overlay absolute w-full h-full flex justify-center 
         items-center bg-[rgba(100,100,100,.5)]`}>
 < Button text={"View full"}/>
 < Button text={"Live Demo"}/>
-
         </div>
         </>
       )  
     }
 
 const handler=()=>{
-    setStatus("flex")
+    setStatus(1)
 }
 const handler2=()=>{
-    setStatus("hidden")
+    setStatus(0)
  
 }
 

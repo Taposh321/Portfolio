@@ -229,6 +229,18 @@ align-items: center;
     transform-origin: center;
 
 }
-.card {
-    box-shadow: 1px 1px 10px rgb(100, 99, 101);
+.overlay{
+    transition: all .5s;
+    opacity: 0;
 }
+.img > .overlay:hover{
+    opacity: 1;
+}
+.card {
+    box-shadow: 1px 1px 5px rgb(100, 99, 101);
+}
+.logo{
+ box-shadow: 1px 1px 10px rgb(105, 105, 106);
+    
+}
+

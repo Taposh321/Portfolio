@@ -10,8 +10,8 @@ import {Link ,useLocation} from "react-router-dom"
 const ListItem = ({ item, isActive, handleMouseEnter, handleMouseLeave }) => {
   return (
     <>
-    <div className='flex flex-col  '>
-    <div className='relative link overflow-hidden py-1 min-w-[100px] my-1 text-sm  cursor-pointer text-center'
+    <div className='flex flex-col mt-3'>
+    <div className='relative link overflow-hidden py-1 min-w-[100px]  text-sm  cursor-pointer text-center'
      onMouseEnter={() => handleMouseEnter(item)}
      onMouseLeave={handleMouseLeave}>
 
@@ -33,62 +33,122 @@ const ListItem = ({ item, isActive, handleMouseEnter, handleMouseLeave }) => {
   );
 };
 
+function Typing({content,speed}){
+const[index,setIndex]=useState(0);
+const [displayContent,setDisplayContent]= useState('');
+
+
+useEffect(()=>{
+  if( index<content.length){
+    const timeOut = setTimeout(()=>{
+      setIndex((index)=>index+1)
+    
+    },speed);
+    return () => clearTimeout(timeOut);
+    }
+},[index,content])
+
+useEffect(() => {
+  setDisplayContent(content.slice(0,index)
+  );
+}, [index, content]);
+
+return(<>
+<span>
+{displayContent}
+</span>
+</>)
+}
+
+// function Typing({ content, speed }) {
+//   const [index, setIndex] = useState(0);
+//   const [displayContent, setDisplayContent] = useState('');
+
+//   useEffect(() => {
+//     if (index < content.length) {
+//       const timeOut = setTimeout(() => {
+//         setIndex(index + 1);
+//       }, speed);
+
+//       return () => clearTimeout(timeOut); // Cleanup function to clear timeout
+//     }
+//   }, [index, content, speed]);
+
+//   useEffect(() => {
+//     setDisplayContent(content.slice(0, index));
+//   }, [index, content]);
+
+//   return (
+//     <span>
+//       {displayContent}
+//     </span>
+//   );
+// }
+
+
  function NavBar(){
     const [activeItem, setActiveItem] = useState("Aboutme");
-const currentPath=useLocation().pathname.replace('/','')
+    const currentPath=useLocation().pathname.replace('/','')
     const modelStates = useSelector((states)=> states.model);
     const dispatch = useDispatch()
-    
+       
 const openSlider=()=>{
+
  dispatch(open())
- console.log(modelStates)
 }
 const closeSlider=()=>{
-  dispatch(close())
-}
 
-    const handleMouseEnter = (item) => {
+  dispatch(close())
+
+}
+const handleMouseEnter = (item) => {
       setActiveItem(item);
     };
-
-
-     const handleMouseLeave = () => {
+ const handleMouseLeave = () => {
       setActiveItem(false)
-      // Do nothing if there's already an active item
-      // Reset the activeItem state only if there's no other item active
     };
 
         const items = ['About me','Projects','GitHub','Blogs','Moments'];
    return (
 <>
-
 <div className="navLinks relative p-4 h-[80px] 
    row-start-1 row-end-3  w-full col-span-12  font-light flex   justify-end items-center  " >
-<div className='mr-auto border rounded flex flex-col
+
+<div className='logo mr-auto border rounded flex flex-col
  justify-around items-center ml-[20px] px-5 text-white '>
 
-  <div className="name">&lt;Taposh Barman /&gt; </div>
+  <div className="name">&lt;{<Typing content={currentPath} speed={100} />}/&gt; </div>
   <div className="profession text-[#b3b3b3] " style={{fontSize:"12px"}}> - Full stack web developer</div>
  {currentPath=="Aboutme" ||currentPath=="" ? <Snowfall numFlakes={10} isActive={0}/> :""}
 </div>
+
+<div onClick={openSlider} className='px-5 md:hidden'>{
+       <FontAwesomeIcon icon={faBars} size="xl" style={{color:"white"}}  /> 
+ }</div>
+
   <div className={`flex modelBox 
-    md:relative  absolute
-   z-10 min-w-[100px] justify-center
-    items-center md:w-auto md:h-auto
-     top-[30%]  md:top-0  
-      text-sm font-mono md:mr-[30px] flex-col md:flex-row text-white `}>
+   md:relative fixed md:p-0 w-[150px] bg-white transition-all  md:transition-none md:bg-transparent text-black h-screen
+   z-10 min-w-[100px] justify-center  
+  ${modelStates[0].status}  md:right-0
+    items-center md:w-auto md:h-auto top-0  
+      text-sm font-mono md:mr-[30px] flex-col md:flex-row md:text-white `}>
+
+    <div onClick={closeSlider} className='top-0 absolute  text-center md:hidden'>
+       <FontAwesomeIcon icon={faClose} style={{color:"red"}}  /> </div>
+    
     {items.map(
       (item) => (
       <ListItem
         key={item}
         item={item}
         isActive={activeItem === item}
-        handleMouseEnter={handleMouseEnter}
+        handleMouseEnter={handleMouseEnter} 
         handleMouseLeave ={handleMouseLeave}
       />
 
     ))
     }
+
   </div>
 </div> 
 </>
