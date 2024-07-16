@@ -2,7 +2,6 @@ import React, { useState ,useEffect, useRef } from 'react';
 import Button from "../buttons/button1"
 
 
-
 function AboutMe(){
 const [viewHight,setViewHeight]= useState(window.innerHeight)
 
