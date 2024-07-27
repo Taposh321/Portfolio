@@ -2,7 +2,7 @@ import React,{useState,useRef} from "react"
 
 
 
-function Button({ text,color }) {
+function Button({ text,style }) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [transition, setTransition] = useState(0);
     const cta = useRef();
@@ -20,8 +20,9 @@ function Button({ text,color }) {
     }
   
     return (
-      <div ref={cta} onClick={handler2} onMouseLeave={handler3}  className="cta-button text-white overflow-hidden cursor-pointer
-        relative text-center w-[90px] h-[35px] text-sm rounded-[20px] mx-1 p-1 border">
+    <div ref={cta} onClick={handler2} style={style} onMouseLeave={handler3}  className={`cta-button
+      overflow-hidden cursor-pointer
+        relative text-center w-[90px] h-[35px] text-sm rounded-[20px] mx-1 p-1 `}>
         <div className={`shade  ${transition === 1 ? 'in ' : 'out'} bg-[lightgreen]`} style={{
           top: position.y + 'px',
           left: position.x + 'px',

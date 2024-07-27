@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState=[
 {
-status:'right-0'
+status:'right-[-100%]'
 }
 ]
 

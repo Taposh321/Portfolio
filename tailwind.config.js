@@ -8,16 +8,6 @@ export default {
   ],  theme: {
     extend: {
       backgroundColor:{
-        'light-dark':"rgb(37,37,37)",
-        "linearBlack": "rgb(0,0,0)",
-"linearBlack":" -moz-linear-gradient(90deg, rgba(0,0,0,1) 13%, rgba(252,252,252,0.48495372270001746) 100%)",
-"linearBlack":" -webkit-linear-gradient(90deg, rgba(0,0,0,1) 13%, rgba(252,252,252,0.48495372270001746) 100%)",
-
-
-"linearBlack": "linear-gradient(90deg, rgba(0,0,0,1) 13%, rgba(252,252,252,0.48495372270001746) 100%)",
-
-      },
-      backgroundColor:{
   
       },
 

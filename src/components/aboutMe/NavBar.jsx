@@ -6,6 +6,7 @@ import { faBars, faClose, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { open,close } from '../../features/model/modelSlice';
 import {Link ,useLocation} from "react-router-dom"
+import Typing from '../typingAnimation/typingAnimation'
 
 const ListItem = ({ item, isActive, handleMouseEnter, handleMouseLeave }) => {
   return (
@@ -33,57 +34,6 @@ const ListItem = ({ item, isActive, handleMouseEnter, handleMouseLeave }) => {
   );
 };
 
-function Typing({content,speed}){
-const[index,setIndex]=useState(0);
-const [displayContent,setDisplayContent]= useState('');
-
-
-useEffect(()=>{
-  if( index<content.length){
-    const timeOut = setTimeout(()=>{
-      setIndex((index)=>index+1)
-    
-    },speed);
-    return () => clearTimeout(timeOut);
-    }
-},[index,content])
-
-useEffect(() => {
-  setDisplayContent(content.slice(0,index)
-  );
-}, [index, content]);
-
-return(<>
-<span>
-{displayContent}
-</span>
-</>)
-}
-
-// function Typing({ content, speed }) {
-//   const [index, setIndex] = useState(0);
-//   const [displayContent, setDisplayContent] = useState('');
-
-//   useEffect(() => {
-//     if (index < content.length) {
-//       const timeOut = setTimeout(() => {
-//         setIndex(index + 1);
-//       }, speed);
-
-//       return () => clearTimeout(timeOut); // Cleanup function to clear timeout
-//     }
-//   }, [index, content, speed]);
-
-//   useEffect(() => {
-//     setDisplayContent(content.slice(0, index));
-//   }, [index, content]);
-
-//   return (
-//     <span>
-//       {displayContent}
-//     </span>
-//   );
-// }
 
 
  function NavBar(){
@@ -105,19 +55,19 @@ const handleMouseEnter = (item) => {
       setActiveItem(item);
     };
  const handleMouseLeave = () => {
-      setActiveItem(false)
+      setActiveItem('')
     };
 
         const items = ['About me','Projects','GitHub','Blogs','Moments'];
    return (
 <>
-<div className="navLinks relative p-4 h-[80px] 
-   row-start-1 row-end-3  w-full col-span-12  font-light flex   justify-end items-center  " >
+<div className="navLinks relative 
+   row-start-1 row-end-3  w-full col-span-12 py-5 h-[100px]  font-light flex   justify-end items-center  " >
 
 <div className='logo mr-auto border rounded flex flex-col
  justify-around items-center ml-[20px] px-5 text-white '>
 
-  <div className="name">&lt;{<Typing content={currentPath} speed={100} />}/&gt; </div>
+  <div className="name">&lt;{<Typing content={currentPath=="Aboutme" ||currentPath==""?"Taposh Barman " :currentPath } speed={100} />}/&gt; </div>
   <div className="profession text-[#b3b3b3] " style={{fontSize:"12px"}}> - Full stack web developer</div>
  {currentPath=="Aboutme" ||currentPath=="" ? <Snowfall numFlakes={10} isActive={0}/> :""}
 </div>
@@ -133,7 +83,7 @@ const handleMouseEnter = (item) => {
     items-center md:w-auto md:h-auto top-0  
       text-sm font-mono md:mr-[30px] flex-col md:flex-row md:text-white `}>
 
-    <div onClick={closeSlider} className='top-0 absolute  text-center md:hidden'>
+    <div onClick={closeSlider} className='top-[10px] absolute  text-center md:hidden'>
        <FontAwesomeIcon icon={faClose} style={{color:"red"}}  /> </div>
     
     {items.map(

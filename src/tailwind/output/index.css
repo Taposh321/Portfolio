@@ -30,8 +30,9 @@ font-family: TiltNeon;
     background-color: #888;
 }
 .hero{
-    background: rgb(2,11,39);
+    background-color:  rgba(2,11,39,1);
 }
+
 .stick{
     position: absolute;
     transition-property:all ;
@@ -177,36 +178,40 @@ align-items: center;
     padding: 2px 10px;
     border: 1px solid lightgray;
 }
-.linearBlack{
-    
+.linearBlack {
+    background: rgba(2,11,39,1);
+    background: -moz-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
+    background: -webkit-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
+    background: radial-gradient(circle at center, rgba(12,45,102,1) 0%,  rgba(2,11,39,1) 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2d66",endColorstr="#020b27",GradientType=1); 
+   }
+   .linearBlack2{
     background: rgb(12,45,102);
-    background: -moz-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
-    background: -webkit-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
-    background: radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
+    background: -moz-radial-gradient(circle at  50% 175px, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
+    background: -webkit-radial-gradient(circle at  50% 175px, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
+    background: radial-gradient(circle at 50% 115px, rgba(12,45,102,1) 30%, rgba(2,11,39,1) 57%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2d66",endColorstr="#020b27",GradientType=1);
-}
-@media (min-width: 380px) {
 
-    .linearBlack {
-        background: rgb(12,45,102);
-        background: -moz-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
-        background: -webkit-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
-        background: radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2d66",endColorstr="#020b27",GradientType=1);    }
-  }
+}
+
 .dot{
     width: 5px;
     height: 5px;
-    border-radius: 50%;
+      border-radius: 50%;
     background-color: white;
     margin:2px;
 }
-.photoContainer{
-    overflow: hidden;
-   border-radius:50% 50% 70% 30% / 52% 43% 57% 48% ;
+.photoContainer{ 
+    background-image: radial-gradient(circle at center,  rgba(225, 225, 225, 1)  30%, rgba(2,11,39,1)  70% );
+
+    background-repeat: no-repeat;
+    background-position:right center;
+    background-size: cover;
+
 }
 
 .cta{
+
     position: relative;
 }
 .shade{
@@ -237,10 +242,52 @@ align-items: center;
     opacity: 1;
 }
 .card {
-    box-shadow: 1px 1px 5px rgb(100, 99, 101);
+    box-shadow: 1px 1px 3px rgb(193, 192, 194);
 }
 .logo{
- box-shadow: 1px 1px 10px rgb(105, 105, 106);
+ box-shadow: 1px 1px 5px rgb(105, 105, 106);
     
 }
+.projectContainer{
+    background-color: #f7f8f8;
+}
 
+.header{
+    background-color:  rgba(2,11,39,1);
+}
+.fadeIn{
+animation:fadeIn .3s linear;
+}
+@keyframes fadeIn{
+0%{
+opacity: 0;
+}
+100%{
+opacity: 1;
+margin-top:0px;
+
+}
+}
+
+.slideDown{
+  position:fixed;
+  top:0;
+  left:0;
+  width:50vw;
+  height:100vh;
+  background-color: rgb(12, 7, 7);
+  transform-origin: bottom;  
+  z-index: 999;
+
+}
+.slideUp{
+    position:fixed;
+    top:0;
+    left:50%;
+    width:50vw;
+    height:100vh;
+    background-color: rgb(12, 7, 7);
+    transform-origin: top;  
+    z-index: 999;
+  }
+  
