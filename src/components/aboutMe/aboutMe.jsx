@@ -91,7 +91,6 @@ and user-friendly solutions. Let's bring your idea into reality.
 <div className="w-full h-full myphoto relative flex " >
 <AnimatedLight position={{x:0,y:0}} animationName={"lightMoveLeft"} />
 <AnimatedLight position={{x:300,y:0}} animationName={"lightMoveRight"} />
-<div className='hill absolute'></div>
     </div>   
     </div>
 
