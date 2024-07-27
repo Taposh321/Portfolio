@@ -122,22 +122,6 @@ exit={{ scaleY:0}}
 transition={{duration:1 ,ease:[.22,1,.33,1]}}>
 </motion.div>
 
-{/* <motion.div
- className="slideD"
- initial={{scaleY:0}}
- animate={{scaleY:1}}
-exit={{ scaleY:0}}
-transition={{duration:.5 ,ease:[.22,1,.33,1],type:"spring",damping:10}} >
-</motion.div>
-<motion.div
- className="slideUp"
- initial={{scaleY:1}}
- animate={{scaleY:0}}
-exit={{ scaleY:0}}
-transition={{duration:.5 ,ease:[.22,1,.33,1]}}>
-</motion.div>
-
- */}
 <div className="header flex justify-center relative">
  <div className="text-md text-white md:text-lg lg:text-xl
   w-[350px] md:w-[400px] lg:w-[500px] h-[80px] 

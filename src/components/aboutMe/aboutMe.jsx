@@ -3,6 +3,7 @@ import Button from "../buttons/button1"
 import { useDispatch, useSelector } from 'react-redux';
 import { setHeight,setWidth } from '../../features/windowSize/windowSizeSlice';
 import {motion} from 'framer-motion'
+import AnimatedLight from "./animatedLight"
 // import LoadingEffect from '../effects/loadingEffect'
 
 
@@ -87,8 +88,10 @@ and user-friendly solutions. Let's bring your idea into reality.
       md:col-start-7 md:col-end-13 md:row-start-1
        md:row-end-13  `}>
 
-<div className="w-full h-full  from-gray-50" >
-
+<div className="w-full h-full myphoto relative flex " >
+<AnimatedLight position={{x:0,y:0}} animationName={"lightMoveLeft"} />
+<AnimatedLight position={{x:300,y:0}} animationName={"lightMoveRight"} />
+<div className='hill absolute'></div>
     </div>   
     </div>
 
