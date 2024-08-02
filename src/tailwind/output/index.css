@@ -289,50 +289,47 @@ margin-top:0px;
     transform-origin: top;  
     z-index: 999;
   }
-  .myphoto{
-    /* background-image: url("../../assets/photoBackground.svg"); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
   .light{
-    height: 70%;
-    width:10px;
+    height:300px;
+    width:300px;
     transform-origin: top;
-    transform: rotate(-10deg);
     filter: blur(20px);
-    background-color: #b8bebe;
+    background-color: #f7f9f960;
     animation-duration: 10s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-
+    z-index: 2;
+    border-radius:50%;
   }
-  @keyframes lightMoveLeft{
+  .heroContent{
+    background-image:  linear-gradient( to right,
+    rgb(6, 6, 6) ,
+    rgba(246, 244, 244, 0)
+     );
+  }
+
+  .customBg{
+background-color: rgba(0, 0, 0, 0.767);
+  } 
+   @keyframes lightMoveLeft{
     0%,100%{
-        width:10px;
-        transform: rotate(-10deg);  
     }
     50%{
-        width:7px;
-        transform: rotate(-14deg);  
     }
   }
   @keyframes lightMoveRight{
     0%,100%{
-        width:10px;
-        transform: rotate(10deg);  
     }
     50%{
-        width:7px;
-        transform: rotate(14deg);  
     }
   }
-  .hill{
-
-border-radius:50% 50% 0px 0px ;
-width: 150px;
-height: 100px;
-bottom:90px;
-left: 80px;
-background-image: linear-gradient(#fafafa7a 20%,rgb(1, 0, 26) 80%);
+  .grid-lines {
+    --s: 30px;  
+    --t:1px;  
+    background:
+     linear-gradient( -100deg,rgba(70, 39, 134, 0) 20%,rgba(0, 6, 51, 0.7) 80%),
+     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#112951 0)
+       0 0/var(--s) var(--s);
   }
+ 
