@@ -182,7 +182,7 @@ align-items: center;
     background: rgba(2,11,39,1);
     background: -moz-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
     background: -webkit-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
-    background: radial-gradient(circle at center, rgba(12,45,102,1) 0%,  rgba(2,11,39,1) 40%);
+    background: radial-gradient(circle at center, rgba(208, 210, 213, 0.748) 10%,  rgba(139, 47, 47, 0) 40%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2d66",endColorstr="#020b27",GradientType=1); 
    }
    .linearBlack2{
@@ -290,20 +290,20 @@ margin-top:0px;
     z-index: 999;
   }
   .light{
-    height:300px;
-    width:300px;
-    transform-origin: top;
     filter: blur(20px);
-    background-color: #f7f9f960;
+    background-color: #f7f9f929;
     animation-duration: 10s;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
     z-index: 2;
     border-radius:50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
   }
   .heroContent{
-    background-image:  linear-gradient( to right,
-    rgb(6, 6, 6) ,
+    background:  linear-gradient( to right,
+    rgb(9, 9, 21) ,
     rgba(246, 244, 244, 0)
      );
   }
@@ -324,12 +324,10 @@ background-color: rgba(0, 0, 0, 0.767);
     }
   }
   .grid-lines {
-    --s: 30px;  
+    --s: 40px;  
     --t:1px;  
     background:
-     linear-gradient( -100deg,rgba(70, 39, 134, 0) 20%,rgba(0, 6, 51, 0.7) 80%),
-     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
+    linear-gradient( to right,rgb(9, 9, 21) ,rgba(246, 244, 244, 0)),     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
     conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#112951 0)
        0 0/var(--s) var(--s);
   }
- 
