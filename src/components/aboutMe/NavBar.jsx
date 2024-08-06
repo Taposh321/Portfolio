@@ -1,12 +1,13 @@
 
 import React, { useState , useEffect,useRef} from 'react';
 import Snowfall from './Snowfall';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faClose, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { open,close } from '../../features/model/modelSlice';
 import {Link ,useLocation} from "react-router-dom"
 import Typing from '../typingAnimation/typingAnimation'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook} from '@fortawesome/free-brands-svg-icons';
+import { faTimes,faBars } from '@fortawesome/free-solid-svg-icons';
 
 const ListItem = ({ item, isActive, handleMouseEnter, handleMouseLeave }) => {
   return (
@@ -62,7 +63,7 @@ const handleMouseEnter = (item) => {
    return (
 <>
 <div className="navLinks relative 
-   row-start-1 row-end-2  w-full col-span-12 py-5 h-[69px]  font-light flex   justify-end items-center  " >
+   w-full col-span-12 py-5 h-[69px]  font-light flex   justify-end items-center  " >
 
 <div className='logo mr-auto border rounded flex flex-col
  justify-around items-center ml-[20px] px-5 text-white '>
@@ -72,9 +73,10 @@ const handleMouseEnter = (item) => {
  {currentPath=="Aboutme" ||currentPath=="" ? <Snowfall numFlakes={10} isActive={0}/> :""}
 </div>
 
-<div onClick={openSlider} className='px-5 md:hidden'>{
-       <FontAwesomeIcon icon={faBars} size="xl" style={{color:"white"}}  /> 
- }</div>
+<div onClick={openSlider} className='px-5 md:hidden'>
+<FontAwesomeIcon icon={faBars} className='text-white' />
+
+  </div>
 
   <div className={`flex modelBox 
    md:relative fixed md:p-0 w-[150px] bg-white transition-all  md:transition-none md:bg-transparent text-black h-screen
@@ -84,7 +86,8 @@ const handleMouseEnter = (item) => {
       text-sm font-mono md:mr-[30px] flex-col md:flex-row md:text-white `}>
 
     <div onClick={closeSlider} className='top-[10px] absolute  text-center md:hidden'>
-       <FontAwesomeIcon icon={faClose} style={{color:"red"}}  /> </div>
+    <FontAwesomeIcon icon={faTimes} style={{color:'red'}} />
+    </div>
     
     {items.map(
       (item) => (

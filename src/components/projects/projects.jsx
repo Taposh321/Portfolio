@@ -1,7 +1,5 @@
 import React ,{useEffect, useState}from "react";
 import Button from "../buttons/button1";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 import Typing from '../typingAnimation/typingAnimation'
 import { useSelector } from 'react-redux';
 import { Outlet } from "react-router-dom";

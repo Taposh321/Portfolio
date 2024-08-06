@@ -7,7 +7,6 @@ import Projects from "./components/projects/projects"
 
 // import AnimatedRoutes from "./components/animatedRouters"
 import Loading from './components/loading';
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
 import { AnimatePresence } from 'framer-motion'
 import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom'
 
@@ -33,7 +32,6 @@ import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom'
 function App(){
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        // Simulate a data fetch
           setLoading(false);
       }, []);
     return(
@@ -41,7 +39,6 @@ function App(){
         {
         loading ? (<Loading />) : (
               <Hero>
-            <NavBar />
             <Outlet />
             </Hero>
             )
