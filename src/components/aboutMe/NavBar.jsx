@@ -62,7 +62,7 @@ const handleMouseEnter = (item) => {
         const items = ['About me','Projects','GitHub','Blogs','Moments'];
    return (
 <>
-<div className="navLinks relative 
+<div id='navLinks' className="navLinks relative 
    w-full col-span-12 py-5 h-[69px]  font-light flex   justify-end items-center  " >
 
 <div className='logo mr-auto border rounded flex flex-col

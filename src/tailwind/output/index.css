@@ -288,6 +288,21 @@ margin-top:0px;
     50%{
     }
   }
+
+.arrow{
+    animation: moveUpDown 1s ease-in-out infinite;
+}
+  @keyframes moveUpDown{
+    0%,100%{
+        top:20px;
+        opacity: .5;
+    }
+    50%{
+        top:30px;
+        opacity:1;
+    }
+
+  }
   .grid-lines {
     --s: 50px;  
     --t:1px;  
@@ -297,24 +312,57 @@ margin-top:0px;
        0 0/var(--s) var(--s)  ,rgb(9, 21, 55);
   }
 
-
-.follow > span :hover{
-    color: #136a8a;
+  .icon-hover {
+    transition: transform 0.3s ease;
   }
+  
+  .icon-hover:hover {
+    transform: translateY(-10px); /* Moves the icon 5px up */
+  }
+  
   .card-item{
-    transition: all .5s;
+    transition: all .2s;
     background: linear-gradient(45deg,rgb(114, 113, 116),rgb(48, 8, 180));
   }
   .card-item:hover{
-    box-shadow: 1px 1px 9px rgb(72, 36, 255);
+    box-shadow: 1px 1px 9px rgb(202, 239, 121);
 
   }
   .education{
     background: url('../../assets/Sprinkle2.svg');
   }
 .customShadow{
-    background:  url('../../assets/shapes1.svg') center no-repeat,
-    linear-gradient(45deg,rgb(10, 115, 114) 10%,rgb(9, 21, 55) 70%)
-    ;
-    box-shadow: 1px 1px 5px rgb(19, 18, 18);
+    background:  ,
+    linear-gradient(45deg,rgb(10, 115, 114) 10%,rgb(9, 21, 55) 70%);
+}
+.card{
+    background-color: #f7f8f8;
+}
+
+.testimonials ,.contact{
+background:rgb(243, 241, 237);
+}
+.gradient-text {
+    font-weight: bold;
+    background: linear-gradient(to right, #4444ed, #ff0368); /* Gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For non-WebKit browsers */
+  }
+  fieldset { 
+    border: 1px solid #b6b2b2; /* Border for the fieldset */
+    padding: 10px;
+    background-color:#ffffff ;
+    width: 350px;
+    
+}
+label{
+    font-size: 13px;
+}
+.contact input, textarea{
+    outline: none;
+    color: black;
+}
+.trustedBy{
+    background: linear-gradient(0deg,rgb(0, 0, 0) 20%,rgba(255, 255, 255, 0) );
 }
