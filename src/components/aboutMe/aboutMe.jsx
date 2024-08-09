@@ -2,8 +2,6 @@ import React, { useState ,useEffect, useRef } from 'react';
 import Button from "../buttons/button1"
 import { useDispatch, useSelector } from 'react-redux';
 import { setHeight,setWidth } from '../../features/windowSize/windowSizeSlice';
-import {motion} from 'framer-motion'
-import '../../assets/photo/heroPhoto.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook,faLinkedin,faGit,faTwitter, faGithub,faReact,faNodeJs} from '@fortawesome/free-brands-svg-icons';
 import {faArrowDown ,faGraduationCap,faDatabase,faTasks,faStar,faArrowRight,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
@@ -22,11 +20,13 @@ function Testimonials (){
   
 
   return(<>
+
   <div className='testimonials flex flex-col  gap-5   p-5 items-center' >
 <div className='flex flex-col items-center justify-center text-black'> 
  <div className=' text-2xl gradient-text '>  Clients Reviews</div>  
 <small className='text-gray-500'>What my clients say</small>
 </div>
+
 <div className='relative  flex px-[50px] items-center  '>
 <div onClick={()=>{clickHandler("left")}} className='p-3 w-[40px]  h-[40px] flex justify-center items-center  z-1 left-0 rounded-full font-bold shadow-lg bg-white absolute '>
 <FontAwesomeIcon icon={faArrowLeft} className='' size='sm' />
@@ -34,10 +34,12 @@ function Testimonials (){
 <div onClick={()=>{clickHandler("right")}} className='p-3 w-[40px]  h-[40px]  flex justify-center items-center rounded-full z-1 bg-white  shadow-lg right-0 absolute '>
 <FontAwesomeIcon icon={faArrowRight} className='' size='sm' />
 </div>
+
 <div className="reviewCardContainer  overflow-hidden flex  w-full h-[380px]   max-w-[350px]  lg:max-w-[700px]">
 {/* review slider */}
-<div style={{marginLeft:-index*350+"px"}} className=' reviewSlider transition-all  w-full flex'>
-<div className='card flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px] h-full p-5 rounded-lg'>
+
+    <div style={{marginLeft:-index*350+"px"}} className=' reviewSlider transition-all  w-full flex'>
+         <div className='card bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px] h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -59,8 +61,8 @@ function Testimonials (){
 
 
   </div>
-</div>
-<div className='card flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
+         </div>
+         <div className='card bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -82,8 +84,8 @@ function Testimonials (){
 
 
   </div>
-</div>
-<div className='card flex flex-col items-center justify-center gap-3 min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
+         </div>
+         <div className='card bg-white flex flex-col items-center justify-center gap-3 min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -105,8 +107,8 @@ function Testimonials (){
 
 
   </div>
-</div>
-<div className='card flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
+         </div>
+         <div className='card bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -128,9 +130,8 @@ function Testimonials (){
 
 
   </div>
-</div>
-</div>
-
+         </div>
+    </div>
 
 </div>
 
@@ -167,25 +168,94 @@ setInput({...input,[data.name]:data.value})
 
 function TrustedBy(){
   return(<>
-    <div className=' trustedBy w-full flex-col gap-5  h-[350px] flex justify-center items-center'>
+    <div className=' trustedBy w-full flex-col gap-10 flex justify-center items-center'>
     <Team />
 
       <div className='font-bold text-customTextColor'>TRUSTED BY:</div>
+
       <div className='flex' >
-      <div className='w-[70px] h-[70px] rounded '> <img src="./src/assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded '> <img src="./src/assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="../../assets/photo/brands3.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="../../assets/photo/brands3.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands.png" alt="" srcset="" /></div>
 
       </div>
+<ProjectSlider />
 
     </div>
 
   </>)
 }
 
+function ProjectSlider (){
+  const [index,setIndex]=useState(0);
+  const [toShow,setToShow]=useState(0);
+
+  const clickHandler=(dir)=>{
+    if(dir=="left"){
+      if(Math.abs(index)>=1) {setIndex((pre)=>pre-1)}
+    }else{
+      if(Math.abs(index) < 3) {setIndex((pre)=>pre+1)}
+    }
+  }
+  const slider=useRef(null);
+
+  useEffect(()=>{
+   const width=slider.current.getBoundingClientRect().width
+   let itemShowAble= "";
+   if(width % 200==0){
+    itemShowAble=width/200
+   }else{
+    itemShowAble=Math.floor(width/200)
+   }
+   setToShow(itemShowAble);
+  })
+  return(<>
+  
+  <div className='projectSlider flex flex-col w-full pl-[20px] py-5   items-center gap-5' >
+ <div className=' text-2xl mr-auto  text-white'>Projects</div>  
+
+<div className='relative  flex items-center justify-center  bg-green-500 w-full  '>
+<div onClick={()=>{clickHandler("left")}} 
+className='p-3  h-full
+ flex justify-center items-center 
+   font-bold shadow-lg bg-white  '>
+
+<FontAwesomeIcon icon={faArrowLeft} className='' size='sm' />
+</div>
+
+<div ref={slider} className=' flex justify-center w-full  bg-gray-500 '>
+<div style={{width:toShow*200 +"px"}} className={`overflow-hidden flex  rounded-lg  bg-black h-[150px]  max-w-[600px]`}>
+{/* review slider */}
+
+   <div style={{marginLeft:-index*200+"px"}} className=' reviewSlider transition-all  w-full flex flex-nowrap overflow-hidden'>
+         <div className='card flex flex-col items-center  border justify-center gap-3  min-w-[200px]  min-h-full p-5 '>
+        </div>
+        <div className='card flex flex-col items-center  border justify-center gap-3   min-w-[200px]   min-h-full p-5 '>
+        </div>
+        <div className='card flex flex-col items-center  border  justify-center gap-3   min-w-[200px]   min-h-full p-5 '>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+<div onClick={()=>{clickHandler("right")}} className='p-3 w-[40px]  h-[40px]  flex justify-center items-center rounded-full  bg-white  shadow-lg right-0  '>
+<FontAwesomeIcon icon={faArrowRight} className='' size='sm' />
+</div>
+
+
+</div>
+
+
+</div>
+
+  
+  </>)
+}
 function Team(){
   return(<>
   <div className='flex flex-col w-full justify-center items-center'>
@@ -194,7 +264,7 @@ function Team(){
       
       <div className='flex flex-col justify-center items-center'>
         <div className='w-[80px] h-[80px] rounded-full overflow-hidden bg-white'>
-        <img src="./src/assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
+        <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
         </div>
         <div className="mateName text-center flex flex-col text-customTextColor">
           <span className=''>Taposh</span> 
@@ -203,7 +273,7 @@ function Team(){
       </div>  
       <div className='flex flex-col justify-center items-center'>
         <div className='w-[80px] h-[80px] rounded-full overflow-hidden bg-white'>
-        <img src="./src/assets/team/akash.png" className='w-full h-full object-cover' alt="" srcset="" />
+        <img src="../assets/team/Akash.png" className='w-full h-full object-cover' alt="" srcset="" />
 
         </div>
         <div className="mateName text-center flex flex-col text-customTextColor">
@@ -213,7 +283,7 @@ function Team(){
       </div>  
       <div className='flex flex-col justify-center items-center'>
         <div className='w-[80px] h-[80px] rounded-full overflow-hidden bg-white'>
-        <img src="./src/assets/team/khusi.png" className='w-full h-full object-cover' alt="" srcset="" />
+        <img src="../assets/team/khusi.png" className='w-full h-full object-cover' alt="" srcset="" />
 
         </div>
         <div className="mateName text-center flex flex-col text-customTextColor">
@@ -352,7 +422,7 @@ and user-friendly solutions. Let's bring your idea into reality.
     <div className='heading text-xl text-customTextColor pb-5'>Academic Education </div>
     <div className='flex gap-5 py-5  h-[200px] customShadow'>
     <div className='myPhoto w-[200px] h-[150px] bg-white rounded-lg border border-white'>
-    <img src="./src/assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
+    <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
     </div>
     <div className=''>
       <ul className='py-5 text-customTextColor text-sm '>
@@ -493,7 +563,6 @@ and user-friendly solutions. Let's bring your idea into reality.
 
   </div>
   <TrustedBy />
-
 </div>
 <Testimonials />
 <ContactForm />

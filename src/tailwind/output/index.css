@@ -307,7 +307,7 @@ margin-top:0px;
     --s: 50px;  
     --t:1px;  
     background:
-    linear-gradient( to right,rgb(10, 10, 26) ,rgba(246, 244, 244, 0)),     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
+    linear-gradient( to right,rgb(11, 11, 30) 20% ,rgba(246, 244, 244, 0)),     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
     conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#153670 0)
        0 0/var(--s) var(--s)  ,rgb(9, 21, 55);
   }
@@ -329,16 +329,12 @@ margin-top:0px;
 
   }
   .education{
-    background: url('../../assets/Sprinkle2.svg');
+    background: url('../../../assets/Sprinkle2.svg');
   }
 .customShadow{
     background:  ,
     linear-gradient(45deg,rgb(10, 115, 114) 10%,rgb(9, 21, 55) 70%);
 }
-.card{
-    background-color: #f7f8f8;
-}
-
 .testimonials ,.contact{
 background:rgb(243, 241, 237);
 }
@@ -364,5 +360,5 @@ label{
     color: black;
 }
 .trustedBy{
-    background: linear-gradient(0deg,rgb(0, 0, 0) 20%,rgba(255, 255, 255, 0) );
+    background: linear-gradient(0deg,rgb(0, 0, 1) 20%,rgba(255, 255, 255, 0) );
 }
