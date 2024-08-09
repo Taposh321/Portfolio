@@ -174,12 +174,12 @@ function TrustedBy(){
       <div className='font-bold text-customTextColor'>TRUSTED BY:</div>
 
       <div className='flex' >
-      <div className='w-[70px] h-[70px] rounded '> <img src="../../assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded '> <img src="../../assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../../assets/photo/brands.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="./src/assets/photo/brands3.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="./src/assets/photo/brands3.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands.png" alt="" srcset="" /></div>
 
       </div>
 <ProjectSlider />
@@ -396,7 +396,7 @@ and user-friendly solutions. Let's bring your idea into reality.
               <div className="z-[29] relative w-full overflow-hidden flex justify-center items-start  md:items-center pt-5 ">
                  <div className='absolute bg-white light w-[300px] h-[300px] justify-center items-center  '></div>
                <div className="dp z-10 w-[250px] h-[250px] md:w-[300px] md:h-[300px] overflow-hidden flex justify-center items-center">
-                   <img src="./src/assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
+                   <img src="src/assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
                </div>
               </div>
            </div>  
