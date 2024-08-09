@@ -283,7 +283,7 @@ transition={{duration:1 ,ease:[.22,1,.33,1]}}>
             <span className='text-yellow-400'>a</span>
             <span className='text-green-300'>p</span>
             osh, 
-        a full stack MERN web developer </div>
+         full stack MERN web developer </div>
   </div> 
   <div className="aboutMe flex  max-w-[500px]  justify-center
    items-stert  flex-col  w-full  rounded-md  ">  
