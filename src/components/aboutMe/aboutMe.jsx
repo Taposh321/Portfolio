@@ -174,12 +174,12 @@ function TrustedBy(){
       <div className='font-bold text-customTextColor'>TRUSTED BY:</div>
 
       <div className='flex' >
-      <div className='w-[70px] h-[70px] rounded '> <img src="./src/assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded '> <img src="./src/assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="./src/assets/photo/brands.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands.png" alt="" srcset="" /></div>
 
       </div>
 <ProjectSlider />
