@@ -74,7 +74,7 @@ const handleMouseEnter = (item) => {
 </div>
 
 <div onClick={openSlider} className='px-5 md:hidden'>
-<FontAwesomeIcon icon={faBars} className='text-white' />
+<FontAwesomeIcon icon={faBars} className='text-white' size='2xl' />
 
   </div>
 

@@ -219,6 +219,7 @@ align-items: center;
     opacity: 1;
 }
 .card {
+    background-color: white;
     box-shadow: 1px 1px 3px rgb(193, 192, 194);
 }
 .logo{

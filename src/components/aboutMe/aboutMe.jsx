@@ -58,8 +58,6 @@ function Testimonials (){
   <div className='flex gap-2'>
       <FontAwesomeIcon icon={faFacebook} color='black' size='md' />
       <FontAwesomeIcon icon={faLinkedin} color='black' size='md' />
-
-
   </div>
          </div>
          <div className='card bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
@@ -173,13 +171,12 @@ function TrustedBy(){
 
       <div className='font-bold text-customTextColor'>TRUSTED BY:</div>
 
-      <div className='flex' >
+      <div className='flex flex-wrap' >
       <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="" srcset="" /></div>
       <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="" srcset="" /></div>
       <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands.png" alt="" srcset="" /></div>
       <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="" srcset="" /></div>
       <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands.png" alt="" srcset="" /></div>
 
       </div>
 <ProjectSlider />
@@ -189,73 +186,74 @@ function TrustedBy(){
   </>)
 }
 
-function ProjectSlider (){
-  const [index,setIndex]=useState(0);
-  const [toShow,setToShow]=useState(0);
 
-  const clickHandler=(dir)=>{
-    if(dir=="left"){
-      if(Math.abs(index)>=1) {setIndex((pre)=>pre-1)}
-    }else{
-      if(Math.abs(index) < 3) {setIndex((pre)=>pre+1)}
+function ProjectSlider() {
+  const [index, setIndex] = useState(0);
+  const [toShow, setToShow] = useState(0);
+  const slider = useRef(null);
+
+  const clickHandler = (dir) => {
+    if (dir === "left") {
+      if (index > 0) setIndex((prev) => prev - 1);
+    } else {
+      if (index < 6 - toShow) setIndex((prev) => prev + 1); // 6 is the total number of items in this example
     }
-  }
-  const slider=useRef(null);
+  };
 
-  useEffect(()=>{
-   const width=slider.current.getBoundingClientRect().width
-   let itemShowAble= "";
-   if(width % 200==0){
-    itemShowAble=width/200
-   }else{
-    itemShowAble=Math.floor(width/200)
-   }
-   setToShow(itemShowAble);
-  })
-  return(<>
-  
-  <div className='projectSlider flex flex-col w-full pl-[20px] py-5   items-center gap-5' >
- <div className=' text-2xl mr-auto  text-white'>Projects</div>  
+  useEffect(() => {
+    const updateToShow = () => {
+      const width = slider.current.getBoundingClientRect().width;
+      let itemShowAble = Math.floor(width / 200);
+      if(width==itemShowAble*200+((itemShowAble-1)*12)){
+        itemShowAble--
+            }
+        
+      setToShow(itemShowAble);
+    };
 
-<div className='relative  flex items-center justify-center  bg-green-500 w-full  '>
-<div onClick={()=>{clickHandler("left")}} 
-className='p-3  h-full
- flex justify-center items-center 
-   font-bold shadow-lg bg-white  '>
+    updateToShow();
+    window.addEventListener("resize", updateToShow);
 
-<FontAwesomeIcon icon={faArrowLeft} className='' size='sm' />
-</div>
+    return () => window.removeEventListener("resize", updateToShow);
+  }, []);
 
-<div ref={slider} className=' flex justify-center w-full  bg-gray-500 '>
-<div style={{width:toShow*200 +"px"}} className={`overflow-hidden flex  rounded-lg  bg-black h-[150px]  max-w-[600px]`}>
-{/* review slider */}
+  return (
+    <div className='projectSlider flex flex-col w-full bg-red-500  p-[20px] py-5 items-center gap-5'>
+      <div className='text-2xl mr-auto text-white'>Projects</div>
 
-   <div style={{marginLeft:-index*200+"px"}} className=' reviewSlider transition-all  w-full flex flex-nowrap overflow-hidden'>
-         <div className='card flex flex-col items-center  border justify-center gap-3  min-w-[200px]  min-h-full p-5 '>
-        </div>
-        <div className='card flex flex-col items-center  border justify-center gap-3   min-w-[200px]   min-h-full p-5 '>
-        </div>
-        <div className='card flex flex-col items-center  border  justify-center gap-3   min-w-[200px]   min-h-full p-5 '>
+      <div className='relative flex items-center justify-center  w-full '>
+        <div 
+          onClick={() => clickHandler("left")} 
+          className='p-3   rounded-full flex justify-center w-[40px] items-center font-bold shadow-lg bg-white'>
+          <FontAwesomeIcon icon={faArrowLeft} size='sm' />
         </div>
 
+        <div ref={slider} className='flex justify-center w-full  '>
+          <div style={{ width: toShow * 200+((toShow-1)*12) + "px" }} className=' overflow-hidden flex rounded-lg  h-[150px]'>
+            <div 
+              style={{ marginLeft: -index * 212+ "px" }} 
+              className='reviewSlider transition-all w-full gap-3  flex '>
+              {/* Your cards here */}
+              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 1</div>
+              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 2</div>
+              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 3</div>
+              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 4</div>
+              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 5</div>
+              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 6</div>
+            </div>
+          </div>
+        </div>
+
+        <div 
+          onClick={() => clickHandler("right")} 
+          className='p-3  flex justify-center items-center rounded-full bg-white shadow-lg'>
+          <FontAwesomeIcon icon={faArrowRight} size='sm' />
+        </div>
+      </div>
     </div>
-
-</div>
-
-</div>
-<div onClick={()=>{clickHandler("right")}} className='p-3 w-[40px]  h-[40px]  flex justify-center items-center rounded-full  bg-white  shadow-lg right-0  '>
-<FontAwesomeIcon icon={faArrowRight} className='' size='sm' />
-</div>
-
-
-</div>
-
-
-</div>
-
-  
-  </>)
+  );
 }
+
 function Team(){
   return(<>
   <div className='flex flex-col w-full justify-center items-center'>
@@ -305,15 +303,17 @@ function AboutMe(){
   
  const useDis = useDispatch();
  const screenSize = useSelector((states)=> states.windowSize);
- const handler=()=>{
-  useDis(setWidth(window.innerWidth));
-  useDis(setHeight(window.innerHeight));
-  }  
+
 
 useEffect(()=>{
+  const handler=()=>{
+    useDis(setWidth(window.innerWidth));
+    useDis(setHeight(window.innerHeight));
+    }  
+  
 window.addEventListener("resize",handler)
 handler()
-},[useDis]);
+},[]);
 
 return (
 <>
