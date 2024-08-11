@@ -60,7 +60,7 @@ function Testimonials (){
       <FontAwesomeIcon icon={faLinkedin} color='black' size='md' />
   </div>
          </div>
-         <div className='card bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
+         <div className='testimonialCtard bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -83,7 +83,7 @@ function Testimonials (){
 
   </div>
          </div>
-         <div className='card bg-white flex flex-col items-center justify-center gap-3 min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
+         <div className='testimonialCtard bg-white flex flex-col items-center justify-center gap-3 min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -106,7 +106,7 @@ function Testimonials (){
 
   </div>
          </div>
-         <div className='card bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
+         <div className='testimonialCtard bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
  
  <div className="flex flex-col items-center">
  <div className="clientPhoto w-[80px] h-[80px] rounded-full bg-gray-500"></div>
@@ -163,7 +163,6 @@ setInput({...input,[data.name]:data.value})
   </div>
   </>)
 }
-
 function TrustedBy(){
   return(<>
     <div className=' trustedBy w-full flex-col gap-10 flex justify-center items-center'>
@@ -185,40 +184,39 @@ function TrustedBy(){
 
   </>)
 }
-
-
 function ProjectSlider() {
   const [index, setIndex] = useState(0);
-  const [toShow, setToShow] = useState(0);
-  const slider = useRef(null);
+  const [width, setWidth] = useState(0);
+  const sliderContainer = useRef(null);
+  const slideWidth = 262; 
+  const totalSilde=6
+  let slidePage=totalSilde/Math.floor(width/slideWidth)
 
   const clickHandler = (dir) => {
     if (dir === "left") {
       if (index > 0) setIndex((prev) => prev - 1);
     } else {
-      if (index < 6 - toShow) setIndex((prev) => prev + 1); // 6 is the total number of items in this example
+      if (index < slidePage) setIndex((prev) => prev + 1); // 6 is the total number of items in this example
     }
   };
 
   useEffect(() => {
-    const updateToShow = () => {
-      const width = slider.current.getBoundingClientRect().width;
-      let itemShowAble = Math.floor(width / 200);
-      if(width==itemShowAble*200+((itemShowAble-1)*12)){
-        itemShowAble--
-            }
-        
-      setToShow(itemShowAble);
-    };
-
-    updateToShow();
-    window.addEventListener("resize", updateToShow);
-
-    return () => window.removeEventListener("resize", updateToShow);
+    // Adjusted for gap and other factors
+    const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+            const { width } = entry.contentRect;
+            const newWidth = Math.floor(width / slideWidth) * slideWidth;
+            setWidth(newWidth)
+        }
+    });
+// 
+    resizeObserver.observe(sliderContainer.current);
+    return () => resizeObserver.unobserve(sliderContainer.current);
+    ;
   }, []);
 
   return (
-    <div className='projectSlider flex flex-col w-full bg-red-500  p-[20px] py-5 items-center gap-5'>
+    <div className='projectSlider flex flex-col w-full   p-[20px] py-5 items-center gap-5'>
       <div className='text-2xl mr-auto text-white'>Projects</div>
 
       <div className='relative flex items-center justify-center  w-full '>
@@ -228,18 +226,25 @@ function ProjectSlider() {
           <FontAwesomeIcon icon={faArrowLeft} size='sm' />
         </div>
 
-        <div ref={slider} className='flex justify-center w-full  '>
-          <div style={{ width: toShow * 200+((toShow-1)*12) + "px" }} className=' overflow-hidden flex rounded-lg  h-[150px]'>
+        <div ref={sliderContainer}  className='flex justify-center w-full '>
+          <div style={{ width:width + "px" }} className=' overflow-hidden flex   h-[150px]'>
             <div 
-              style={{ marginLeft: -index * 212+ "px" }} 
+            style={{ marginLeft: -index * 272+ "px" }} 
               className='reviewSlider transition-all w-full gap-3  flex '>
-              {/* Your cards here */}
-              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 1</div>
-              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 2</div>
-              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 3</div>
-              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 4</div>
-              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 5</div>
-              <div className='card flex flex-col items-center border justify-center gap-3 min-w-[200px] p-5'>Card 6</div>
+              <div className='slide flex flex-col items-center border justify-center gap-3 min-w-[260px] '>
+              <img src="../assets/projects/project1.jpg" className='w-full h-full object-cover' alt="" srcset="" />
+              </div>              <div className='slide flex flex-col items-center border justify-center gap-3 min-w-[260px] '>
+              <img src="../assets/projects/project1.jpg" className='w-full h-full object-cover' alt="" srcset="" />
+              </div>
+              <div className='slide flex flex-col items-center border justify-center gap-3 min-w-[260px] '>
+              <img src="../assets/projects/project1.jpg" className='w-full h-full object-cover' alt="" srcset="" />
+              </div>
+              <div className='slide flex flex-col items-center border justify-center gap-3 min-w-[260px] '>
+              <img src="../assets/projects/project1.jpg" className='w-full h-full object-cover' alt="" srcset="" />
+              </div>   <div className='slide flex flex-col items-center border justify-center gap-3 min-w-[260px] '>
+              <img src="../assets/projects/project1.jpg" className='w-full h-full object-cover' alt="" srcset="" />
+              </div>
+
             </div>
           </div>
         </div>
@@ -250,13 +255,16 @@ function ProjectSlider() {
           <FontAwesomeIcon icon={faArrowRight} size='sm' />
         </div>
       </div>
+      <div className='w-full min-h-[400px] text-white py-10'>
+<div className='text-xl'> Selected Project Description</div>
+
+      </div>
     </div>
   );
 }
-
 function Team(){
   return(<>
-  <div className='flex flex-col w-full justify-center items-center'>
+  <div className='flex flex-col w-full justify-center items-center pt-10'>
     <div className='text-2xl text-white'>TEAMS</div>
     <div className='gap-3 p-2 rounded-lg flex'>
       
@@ -318,9 +326,7 @@ handler()
 return (
 <>
 
-<div
- className={` relative  flex flex-col w-full  `}>
-
+<div className={` relative  flex flex-col w-full  `}>
   <section className=' relative p-0 m-0  flex flex-col w-full h-screen max-h-[1200px] ' >
   
   {/* <motion.div
