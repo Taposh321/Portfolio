@@ -8,7 +8,11 @@
     font-weight: normal;
     font-style: normal;
 }
-
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .stick{
     position: absolute;
     transition-property:all ;
@@ -341,14 +345,12 @@ margin-top:0px;
   
   .card-item{
     transition: all .2s;
-    background: linear-gradient(45deg,rgb(114, 113, 116),rgb(48, 8, 180));
+    background: linear-gradient(45deg,rgb(40, 92, 113),rgb(22, 20, 133));
   }
   .card-item:hover{
     box-shadow: 1px 1px 9px rgb(202, 239, 121);
-
   }
   .education{
-    background-color:rgb(9, 21, 55);
     /* background: url('../../../assets/Sprinkle2.svg'); */
   }
 .customShadow{

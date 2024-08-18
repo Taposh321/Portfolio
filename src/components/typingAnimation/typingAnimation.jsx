@@ -37,7 +37,7 @@ export default function TypingAnimation({content,speed,style="latter"}){
     
     
     return(<>
-    <span className='typingContainer'>
+    <span className='typingContainer text-sm font-thin'>
     {displayContent}
     </span>
     </>)

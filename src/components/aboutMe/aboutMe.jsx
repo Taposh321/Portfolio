@@ -187,6 +187,12 @@ function TrustedBy(){
 function ProjectSlider() {
   const [index, setIndex] = useState(0);
   const [width, setWidth] = useState(0);
+  const [projects,setProjects]=useState(
+    [{
+id:"123",
+heading:"Demo",
+image_path:"../assets/projects/project1.jpg"
+  }])
   const sliderContainer = useRef(null);
   const slideWidth = 262; 
   const totalSilde=6
@@ -307,6 +313,26 @@ function Team(){
   </>)
 
 }
+function GraduationCapIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+      <path d="M22 10v6" />
+      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+    </svg>
+  )
+}
 function AboutMe(){
   
  const useDis = useDispatch();
@@ -329,20 +355,6 @@ return (
 <div className={` relative  flex flex-col w-full  `}>
   <section className=' relative p-0 m-0  flex flex-col w-full h-screen max-h-[1200px] ' >
   
-  {/* <motion.div
- className="slideDown"
- initial={{scaleY:1}}
- animate={{scaleY:0}}
-exit={{ scaleY:1}}
-transition={{duration:1 ,ease:[.22,1,.33,1],type:"spring",damping:10}} >
-      </motion.div>
- <motion.div
- className="slideUp"
- initial={{scaleY:1}}
- animate={{scaleY:0}}
-exit={{ scaleY:1}}
-transition={{duration:1 ,ease:[.22,1,.33,1]}}>
-      </motion.div> */}
 
 <NavBar />
 
@@ -353,7 +365,7 @@ transition={{duration:1 ,ease:[.22,1,.33,1]}}>
      <section className= {`max-w-[600px] w-full  pl-[20px] ${screenSize[0].height<=700?'h-full justify-center ':' h-[500px] justify-end' }   flex flex-col `}>
         <div className="relative text-white 
           max-w-[400px] my-5 " > 
-            <div className='headingAboutMe text-3xl tracking-wider  font-semibold '> 
+            <div className='headingAboutMe lg:text-3xl text-2xl tracking-wider  font-semibold '> 
             Hi, This is <span> </span>  
              <span className='text-red-500'>T</span>
             <span className='text-yellow-400'>a</span>
@@ -419,40 +431,42 @@ and user-friendly solutions. Let's bring your idea into reality.
   </section>
 <div className='education  w-full  flex flex-col '>
   <div className='text-2xl py-3 pl-[20px]  text-customTextColor flex items-center '> 
-  <FontAwesomeIcon icon={faGraduationCap} className='' size='lg' />
-    <span className="ml-2 py-5 ">Educational Qualification</span>
+  {/* <FontAwesomeIcon icon={faGraduationCap} className='' size='lg' /> */}
+  <GraduationCapIcon className="w-8 h-8 mr-2" />
+  
+    <span className="ml-2 py-10 ">Educational Qualification</span>
   </div>
 
-  <section className='flex flex-col lg:flex-row  pl-[20px]   justify-center items-center '>
-  <div className="flex flex-col w-full lg:w-[50%] max-w-[500px] lg:max-w-full     "> 
-    <div className='heading text-xl text-customTextColor pb-5'>Academic Education </div>
-    <div className='flex gap-5 py-5  h-[200px] customShadow'>
-    <div className='myPhoto w-[200px] h-[150px] bg-white rounded-lg border border-white'>
+  <section className='flex flex-col lg:flex-row pl-[20px] w-full bg-white  justify-center items-center '>
+
+  <div className="flex inset-0  w-full h-full shadow-md items-center    "> 
+    <div className='flex gap-5  pl-5 rounded-md  w-full  max-w-[500px]  items-center  h-[200px] ' >
+    <div className='myPhoto w-[150px] h-[150px] bg-white rounded-full overflow-hidden'>
     <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover' alt="" srcset="" />
     </div>
-    <div className=''>
-      <ul className='py-5 text-customTextColor text-sm '>
-        <li>Full Name: Taposh Barman</li>
-        <li>Studied: BBA</li>
+    <div className='flex flex-col gap-3'>
+    <div className='heading text-xl  '>Academic Education </div>
+      <ul className=' text-sm '>
+        <li>Studied: BBA (Business Administrative)</li>
         <li>Major Subject: Accounting</li>
         <li>Institute: National University Of Bangladesh</li>
-      </ul>
+      </ul>[]
     </div>
     </div>
   </div>
-
-  <div className='flex flex-col w-full h-full lg:w-[50%] max-w-[500px] lg:max-w-full   justify-center '>
-     <h1 className='text-customTextColor text-xl pb-5 '> MERN Stack Course - Interactive Care</h1>
+<div className='flex flex-col w-full h-full shadow-xl  p-5   justify-center '>
  
-      <div className='flex customShadow md:flex-row flex-col  md:h-[200px] w-full justify-center gap-3 items-center py-5'>
-      <div className='text-gray-400 bg-white border rounded-lg  flex-wrap min-w-[200px] h-[150px] '></div>
+      <div className='flex customShadow  md:flex-row flex-col  md:h-[200px] w-full  gap-3 py-5'>
+      <div className=' bg-white border rounded-md  flex-wrap w-full max-w-[300px] h-[150px] '></div>
 
-  <div className=' text-customTextColor text-sm py-2 lg:pl-2'>
+  <div className='  text-sm py-2 lg:pl-2'>
+  <h1 className=' text-xl pb-5 '> MERN Stack Course - Interactive Care</h1>
   I successfully completed an intensive course on the MERN stack from Interactive Care.
   This course provided comprehensive training on the full-stack development process using MongoDB, Express.js, React, and Node.js.
   </div>
   </div> 
   </div>
+
   </section>
 
   <div className='coveredTopics pl-[20px] py-5 flex flex-wrap justify-center md:justify-normal gap-5 '>
@@ -536,7 +550,7 @@ and user-friendly solutions. Let's bring your idea into reality.
      <li>Real time technologies like socket.io
      </li>
 
-     <li>Building and deploying applications
+    <li>Building and deploying applications
      </li>
 
 
@@ -547,7 +561,7 @@ and user-friendly solutions. Let's bring your idea into reality.
  <div className='heading text-customTextColor flex justify-between lg:text-xl md:text-md text-md tracking-wider '>
  <strong>NextJs:</strong>
  <div className='w-[40px] h-[40px] text-lg rounded-full font-bold text-blue-950 flex justify-center items-center'>
- <img src="./src/assets/icons/nextJs3.svg" alt="" srcset="" />
+ <img src="../assets/icons/nextJs3.svg" alt="" srcset="" />
    </div>
 
  </div>
@@ -561,8 +575,6 @@ and user-friendly solutions. Let's bring your idea into reality.
      </li>
      <li>Building and deploying applications
      </li>
-
-
    </ul>
  </div>
 </div>
