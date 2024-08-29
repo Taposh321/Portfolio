@@ -580,7 +580,7 @@ and user-friendly solutions. Let's bring your idea into reality.
 
   </div>
   </div>
-  <div  className='profilePhoto w-full max-w-[400px] h-[300px] md:mr-5 bg-white rounded-lg'>
+  <div  className=' w-full max-w-[400px] h-[300px] md:mr-5 bg-white rounded-lg'>
 
 
   </div>
