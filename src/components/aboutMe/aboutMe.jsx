@@ -49,15 +49,15 @@ function Testimonials (){
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti nam tempore fugit quaerat omnis soluta. Mollitia, iure! Ipsum et.
   </div>
   <div>
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
   </div>
   <div className='flex gap-2'>
-      <FontAwesomeIcon icon={faFacebook} color='black' size='md' />
-      <FontAwesomeIcon icon={faLinkedin} color='black' size='md' />
+      <FontAwesomeIcon icon={faFacebook} color='black' size='lg' />
+      <FontAwesomeIcon icon={faLinkedin} color='black' size='lg' />
   </div>
          </div>
          <div className='testimonialCtard bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
@@ -70,15 +70,15 @@ function Testimonials (){
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti nam tempore fugit quaerat omnis soluta. Mollitia, iure! Ipsum et.
   </div>
   <div>
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
   </div>
   <div className='flex gap-2'>
-      <FontAwesomeIcon icon={faFacebook} color='black' size='md' />
-      <FontAwesomeIcon icon={faLinkedin} color='black' size='md' />
+      <FontAwesomeIcon icon={faFacebook} color='black' size='lg' />
+      <FontAwesomeIcon icon={faLinkedin} color='black' size='lg' />
 
 
   </div>
@@ -93,15 +93,15 @@ function Testimonials (){
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti nam tempore fugit quaerat omnis soluta. Mollitia, iure! Ipsum et.
   </div>
   <div>
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
   </div>
   <div className='flex gap-2'>
-      <FontAwesomeIcon icon={faFacebook} color='black' size='md' />
-      <FontAwesomeIcon icon={faLinkedin} color='black' size='md' />
+      <FontAwesomeIcon icon={faFacebook} color='black' size='lg' />
+      <FontAwesomeIcon icon={faLinkedin} color='black' size='lg' />
   </div>
          </div>
          <div className='testimonialCtard bg-white flex flex-col items-center justify-center gap-3  min-w-[350px] max-w-[350px]  h-full p-5 rounded-lg'>
@@ -114,15 +114,15 @@ function Testimonials (){
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti nam tempore fugit quaerat omnis soluta. Mollitia, iure! Ipsum et.
   </div>
   <div>
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
-  <FontAwesomeIcon icon={faStar} color='yellow' size='md' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
+  <FontAwesomeIcon icon={faStar} color='yellow' size='lg' />
   </div>
   <div className='flex gap-2'>
-      <FontAwesomeIcon icon={faFacebook} color='black' size='md' />
-      <FontAwesomeIcon icon={faLinkedin} color='black' size='md' />
+      <FontAwesomeIcon icon={faFacebook} color='black' size='lg' />
+      <FontAwesomeIcon icon={faLinkedin} color='black' size='lg' />
   </div>
          </div>
     </div>
@@ -167,11 +167,11 @@ function TrustedBy(){
       <div className='font-bold text-customTextColor '>TRUSTED BY:</div>
 
       <div className='flex flex-wrap ' >
-      <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="" srcset="" /></div>
-      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="" srcset="" /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="Brand"  /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="Brand" /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands.png" alt="Brand"  /></div>
+      <div className='w-[70px] h-[70px] rounded '> <img src="../assets/photo/brands3.png" alt="Brand"  /></div>
+      <div className='w-[70px] h-[70px] rounded'> <img src="../assets/photo/brands2.png" alt="Brand" /></div>
 
       </div>
 
@@ -181,7 +181,7 @@ function TrustedBy(){
 }
 function ProjectSlider() {
   const [index, setIndex] = useState(0);
-  const [width, setWidth] = useState(250);
+  const [width, setWidth] = useState(500);
   const [dots,setDots]=useState('');
   const [slides,setSlides]=useState(
     [
@@ -228,18 +228,29 @@ content:"Demo"
               
 ]);
 
+const s=useRef(null);
+const moveHandler =(e) => {
+         const textRect =   e.target.getBoundingClientRect();
+         const textX = e.clientX - textRect.left;
+         const textY = e.clientY - textRect.top;
+
+         const centerX = textRect.width / 2;
+         const centerY = textRect.height / 2;
+
+         const rotateX = (centerY - textY) / 12;
+         const rotateY = (textX - centerX) / 12;
+         e.target.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        
+   }
+
+    const leaveHandler= (e) => {
+      e.target.style.transform = `rotateX(0) rotateY(0)`;
+     };
+  
   const sliderContainer = useRef(null);
- 
   const slideWidth = 250; 
   let currentlyShowingItems=Math.floor(width/slideWidth);
-  let slidePage=slides.length/currentlyShowingItems;
 
- 
-   
-  
-
-  
-  
   const clickHandler = (dir) => {
     if (dir === "left") {
       if (index > 0) setIndex((prev) => prev - 1);
@@ -248,29 +259,42 @@ content:"Demo"
     }
   };
 
- 
   useEffect(() => {
-    // Adjusted for gap and other factors
+    let preValue=''
     const resizeObserver = new ResizeObserver((entries) => {
         for (let entry of entries) {
             const { width } = entry.contentRect;
             const newWidth = Math.floor(width / slideWidth) * slideWidth;
-            setWidth(newWidth)
+            let totalSlideShowAble= Math.floor(width / slideWidth);
+            //set width only when there is a new width
+            if(totalSlideShowAble!=preValue){
+              setWidth(newWidth)
+              preValue=totalSlideShowAble
+            }
         }
     });
-
-
     resizeObserver.observe(sliderContainer.current);
     return () => resizeObserver.unobserve(sliderContainer.current);
     ;
-  }, []);
+  }, [slideWidth]);
+
+const getDetails=()=>{
+    fetch('http://localhost:5000/slideData')
+    .then((response) =>  response.text())
+    .then((data) =>{   
+      alert(data)
+      }
+  ).catch((error)=>{
+  console.log(error);
+    })
+  
+}
+
 
   return (
-    <div className='projectSlider flex flex-col w-full   p-[20px] py-5 items-center gap-5'>
+    <div className='projectSlider flex flex-col w-full   p-[20px] pt-10 items-center '>
       <div className='text-2xl mr-auto text-white'>Projects</div>
-
       <div className='relative flex  w-full '>
-      
         <div className='w-[50px] cursor-pointer min-h-full flex justify-center items-center '>
         <div 
           onClick={() => clickHandler("left")} 
@@ -278,17 +302,14 @@ content:"Demo"
           <FontAwesomeIcon icon={faArrowLeft} size='sm' />
         </div>
         </div>
-
-        <div ref={sliderContainer}  className='flex justify-center w-full overflow-hidden   '>
-          <div style={{ width:width+12+"px" }} className=' flex overflow-hidden  items-center  h-[160px] py-4 '>
-            <div style={{ marginLeft: -index * 262+ "px" }} className='reviewSlider gap-3 transition-all w-full flex '>
-
+        <div ref={sliderContainer}  className='flex  w-full justify-center overflow-hidden   '>
+          <div style={{ width:width+12+"px" }}   className='  flex  items-center overflow-hidden  h-[160px] py-4 '>
+            <div style={{ marginLeft: -index * 250+"px" }} className='  reviewSlider gap-3  transition-all w-full flex '>
              {
-
-              slides.map((element)=>
-                <div  id={element.id}  className='slide flex items-center justify-center  min-w-[250px] '>
-                 <div className=' h-full w-full'>
-                    <img  src={element.image_path} className='w-full h-full  object-cover absolute' alt="" srcset="" />
+              slides.map((element,i)=>
+                <div  key={i} onClick={getDetails}   className='slide relative flex items-center justify-center  min-w-[250px] '>
+                 <div  onMouseMove={moveHandler} onMouseLeave={leaveHandler}  className='border slide-3d h-full w-full'>
+                    <img  src={element.image_path} className='w-full h-full  object-cover' alt="" srcset="" />
                 </div>
                </div>         
        
@@ -306,15 +327,17 @@ content:"Demo"
           <FontAwesomeIcon icon={faArrowRight} size='sm' />
         </div>
         </div>
-
       </div>
-
-     
-
-
-      <div className='w-full min-h-[400px] text-white py-10'>
-       <div className='text-xl'> Selected Project Description</div>
-
+      <div style={{width:width+'px'}} className={` min-w-[400px] flex flex-col gap-3 justify-center items-center md:items-start text-white py-10`}>
+       <div className='text-xl'> Selected Project Descriptions</div>
+       <div className='projectDetails flex flex-col md:flex-row'>
+        <div className='projectPhoto w-[250px] h-[180px] bg-slate-50'>
+        </div>
+        <div className='flex'> 
+          
+        </div>
+ 
+       </div>
       </div>
     </div>
   );
@@ -365,32 +388,30 @@ function Team(){
   </>)
 
 }
-function GraduationCapIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-      <path d="M22 10v6" />
-      <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-    </svg>
-  )
+function effect3D({}){
+  const moveHandler =(e) => {
+    const textRect =   heroText.current.getBoundingClientRect();
+    const textX = e.clientX - textRect.left;
+    const textY = e.clientY - textRect.top;
+
+    const centerX = textRect.width / 2;
+    const centerY = textRect.height / 2;
+
+    const rotateX = (centerY - textY) / 15;
+    const rotateY = (textX - centerX) / 15;
+
+    heroText.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+}
+
+const leaveHandler= () => {
+  heroText.current.style.transform = `rotateX(0) rotateY(0)`;
+};
 }
 function AboutMe(){
-   const heroText=useRef(null)
    const useDis = useDispatch();
    const screenSize = useSelector((states)=> states.windowSize);
-
-
+  
+   const heroText=useRef(null);
    const moveHandler =(e) => {
             const textRect =   heroText.current.getBoundingClientRect();
             const textX = e.clientX - textRect.left;
@@ -401,7 +422,6 @@ function AboutMe(){
 
             const rotateX = (centerY - textY) / 15;
             const rotateY = (textX - centerX) / 15;
-
             heroText.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       }
 
@@ -431,7 +451,7 @@ return (
      <section className= {`max-w-[600px] w-full  pl-[20px] ${screenSize[0].height<=700?'h-full justify-center ':' h-[400px] justify-end' }   flex flex-col `}>
         <div  className="relative  text-container text-white 
           max-w-[400px] my-5 " > 
-            <div ref={heroText} onMouseMove={moveHandler} onMouseLeave={leaveHandler} className='headingAboutMe text-3d lg:text-4xl text-3xl tracking-wider  font-bold'> 
+            <div ref={heroText} onMouseMove={moveHandler} onMouseLeave={leaveHandler} className='headingAboutMe  text-3d md:text-4xl text-3xl tracking-wider  font-bold'> 
             Hi, This is <span> </span>  
              <span className='text-red-500'>T</span>
             <span className='text-yellow-400'>a</span>
@@ -450,7 +470,7 @@ and user-friendly solutions. Let's bring your idea into reality.
   <div className='flex'>
 {
   <> 
-  <Button style={{color:"white",border:"1px solid lightgray"}} text={"Let's do it"}  />
+  <Button style={{color:"white",border:"1px solid lightgray",backgroundColor:"rgb(59,130,246)"}} text={"Contact me"}  />
   <Button style={{color:"white",border:"1px solid lightgray",marginLeft:"10px"}} text={"Resume"}  />
 </>
 }
@@ -495,15 +515,15 @@ and user-friendly solutions. Let's bring your idea into reality.
     </div>
     </div>
   </section>
- <div className='education  w-full  flex flex-col '>
+ <div className='education  w-full  flex flex-col  '>
 
 
-  <section className='flex grid-lines2 max-h-[700px] h-full flex-col w-full py-[40px] justify-end  relative '>
+  <section className='flex grid-lines2 min-h-[500px] flex-col w-full py-[40px] justify-center  relative '>
  
   {/* <div className='text-xl bg-white ml-[20px] customBorderRadius z-[100] flex gap-5 w-[300px] pl-4 py-2 items-center  '> 
     <span className=" flex  items-center gap-2"> <GraduationCapIcon /> Educational Qualification</span>
   </div> */}
-  <div className='flex flex-col lg:flex-row gap-2 w-full justify-center items-center '>
+  <div className='flex flex-col lg:flex-row  w-full justify-center items-center '>
 {/* Academic */}
   {/* <div className="flex inset-0 z-[100] rounded-sm w-full  h-[230px] shadow-md    items-center    "> 
     <div className='flex gap-5  w-full  max-w-[500px]  items-center  ' >
@@ -523,16 +543,16 @@ and user-friendly solutions. Let's bring your idea into reality.
 {/* MERN */}
 <div className='flex flex-col md:flex-row w-full   shadow-md rounded-sm  md:min-w-[500px] p-5 justify-between items-center '>
  
-  <div className=' certificate  flex rounded justify-center flex-wrap w-full max-w-[400px]  overflow-hidden '>
-   <div className='w-[80%] h-[auto] mt-5 overflow-hidden'>
+  <div className=' certificate  flex rounded justify-center flex-wrap w-full max-w-[25rem]  overflow-hidden '>
+   <div className='w-[90%] h-[auto] mt-5 overflow-hidden'>
    <img src="../assets/fakeCertificate.jpeg" className=' w-full h-full object-contain' loading='lazy' alt="" srcset="" />
 
    </div>
   </div>
 
-  <div className=' w-full flex flex-col gap-3 max-w-[500px] lg:p-5 text-sm py-2 md:pl-5'>
-  <h1 className='text-2xl md:text-4xl font-bold  text-white '> MERN Stack Course - <span className='text-blue-500'> Interactive Care</span></h1>
-  <div className='text-white'>
+  <div className=' w-full flex flex-col gap-3 max-w-[500px]  lg:p-5 text-sm py-2 md:pl-5'>
+  <h1 className='text-3xl md:text-4xl font-bold  text-white '> MERN Stack Course - <span className='text-blue-500'> Interactive Care</span></h1>
+  <div className='text-white tracking-widest '>
   I successfully completed an intensive course on the MERN stack from Interactive Care.
   This course provided comprehensive training on the full-stack development process using MongoDB, Express.js, React, and Node.js.
   </div>
@@ -545,6 +565,26 @@ and user-friendly solutions. Let's bring your idea into reality.
   <div className="orb bottom-[30px]"></div>
   <div className="orb bottom-[0%] left-[70%]"></div> */}
 
+  </section>
+  <section className='min-h-[100vh] grid-lines3 pl-[20px]  flex w-full flex-col-reverse md:flex-row justify-center  items-center md:justify-between gap-3'>
+  
+  <div  className='aboutME  max-w-[500px] w-full h-full  min-h-[400px] flex flex-col gap-5'>
+  <h1 className='font-bold md:text-4xl text-3xl text-white'> <span className='text-blue-500'>GET TO KNOW</span>  more about me</h1>
+  <div className='text-white  tracking-wider  p-1'>
+    I was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves.
+    I have graduated from <u>National university</u> Bangladesh in Accounting as a major subject.
+    When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene,    &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years.
+    We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong>
+   
+    
+
+  </div>
+  </div>
+  <div  className='profilePhoto w-full max-w-[400px] h-[300px] md:mr-5 bg-white rounded-lg'>
+
+
+  </div>
+ 
   </section>
 <div className=' py-5' >
 <div className='text-xl sticky top-[10px] md:top-0 md:relative flex justify-start md:justify-start   mb-auto w-full items-center gap-2 '>
