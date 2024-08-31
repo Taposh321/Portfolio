@@ -59,7 +59,7 @@ const handleMouseEnter = (item) => {
       setActiveItem('')
     };
 
-        const items = ['About me','Projects','GitHub','Blogs','Moments'];
+        const items = ['About me','Projects','Moments'];
    return (
 <>
 <div id='navLinks' className="navLinks relative 
@@ -74,7 +74,7 @@ const handleMouseEnter = (item) => {
 </div>
 
 <div onClick={openSlider} className='px-5 md:hidden'>
-<FontAwesomeIcon icon={faBars} className='text-white' size='2xl' />
+<FontAwesomeIcon icon={faBars} className='text-white' size='lg' />
 
   </div>
 

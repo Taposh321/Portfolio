@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setHeight,setWidth } from '../../features/windowSize/windowSizeSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook,faLinkedin,faGit,faTwitter, faGithub,faReact,faNodeJs} from '@fortawesome/free-brands-svg-icons';
-import {faArrowDown ,faGraduationCap,faDatabase,faTasks,faStar,faArrowRight,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import {faArrowDown,faCircleUser,faLaptopCode ,faGraduationCap,faDatabase,faTasks,faStar,faArrowRight,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import NavBar from './NavBar'
 
 function Testimonials (){
@@ -182,7 +182,7 @@ function TrustedBy(){
 function ProjectSlider() {
   const [index, setIndex] = useState(0);
   const [width, setWidth] = useState(500);
-  const [dots,setDots]=useState('');
+  
   const [slides,setSlides]=useState(
     [
       {
@@ -278,16 +278,19 @@ const moveHandler =(e) => {
     ;
   }, [slideWidth]);
 
-const getDetails=()=>{
-    fetch('http://localhost:5000/slideData')
-    .then((response) =>  response.text())
-    .then((data) =>{   
-      alert(data)
-      }
-  ).catch((error)=>{
-  console.log(error);
-    })
-  
+  let timeId
+const debouncing=()=>{
+   if(timeId){ clearTimeout(timeId)};
+
+    timeId= setTimeout(()=>{
+      fetch('http://localhost:5000/slideData')
+      .then((response) =>  response.text())
+      .then((data) =>{   
+        }
+    ).catch((error)=>{
+    console.log(error);
+      })
+    },700);
 }
 
 
@@ -307,7 +310,7 @@ const getDetails=()=>{
             <div style={{ marginLeft: -index * 250+"px" }} className='  reviewSlider gap-3  transition-all w-full flex '>
              {
               slides.map((element,i)=>
-                <div  key={i} onClick={getDetails}   className='slide relative flex items-center justify-center  min-w-[250px] '>
+                <div  key={i} onClick={debouncing}   className='slide relative flex items-center justify-center  min-w-[250px] '>
                  <div  onMouseMove={moveHandler} onMouseLeave={leaveHandler}  className='border slide-3d h-full w-full'>
                     <img  src={element.image_path} className='w-full h-full  object-cover' alt="" srcset="" />
                 </div>
@@ -388,25 +391,47 @@ function Team(){
   </>)
 
 }
-function effect3D({}){
-  const moveHandler =(e) => {
-    const textRect =   heroText.current.getBoundingClientRect();
-    const textX = e.clientX - textRect.left;
-    const textY = e.clientY - textRect.top;
 
-    const centerX = textRect.width / 2;
-    const centerY = textRect.height / 2;
-
-    const rotateX = (centerY - textY) / 15;
-    const rotateY = (textX - centerX) / 15;
-
-    heroText.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+function Tabs(){
+  const tabs=[
+"I was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves I have graduated from <b>National university</b> Bangladesh in Accounting as a major subject. When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene, &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years. We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong> "
+,
+"he was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves I have graduated from <b>National university</b> Bangladesh in Accounting as a major subject. When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene, &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years. We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong> "
+,
+"we was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves I have graduated from <b>National university</b> Bangladesh in Accounting as a major subject. When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene, &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years. We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong> "
+];
+const [current,setCurrent]=useState(tabs[0])
+ 
+  const icons=[faCircleUser,faGraduationCap,faLaptopCode]
+  
+  const handler=(i)=>{
+ setCurrent(tabs[i])
+  }
+  return(<>
+  
+  <div className="flex flex-col max-w-[500px]   w-full justify-center items-start  gap-2 ">
+  <h1 className='font-bold md:text-4xl text-3xl text-white'> 
+    <span className='text-blue-500'>GET TO KNOW</span> more about me</h1>
+  <div className='text-white  tracking-wider  p-1'>
+   {
+   current
+   }
+   </div>
+  </div>
+   <div className="tab flex gap-4 text-white md:flex-col justify-start md:justify-center  items-center p-2">
+   {
+   
+   icons.map((e,i)=> (
+    <div key={i} onClick={()=>handler(i)} id={e.iconName} className={` ${ i==tabs.indexOf(current)? 'bg-[lightgray] text-[#343434]':''} transition-colors rounded-md p-2`}>
+      <FontAwesomeIcon className='pointer-events-none' icon={e} size='lg' />
+   </div>
+    
+   ))}
+   </div>
+  
+  </>)
 }
 
-const leaveHandler= () => {
-  heroText.current.style.transform = `rotateX(0) rotateY(0)`;
-};
-}
 function AboutMe(){
    const useDis = useDispatch();
    const screenSize = useSelector((states)=> states.windowSize);
@@ -519,30 +544,10 @@ and user-friendly solutions. Let's bring your idea into reality.
 
 
   <section className='flex grid-lines2 min-h-[500px] flex-col w-full py-[40px] justify-center  relative '>
- 
-  {/* <div className='text-xl bg-white ml-[20px] customBorderRadius z-[100] flex gap-5 w-[300px] pl-4 py-2 items-center  '> 
-    <span className=" flex  items-center gap-2"> <GraduationCapIcon /> Educational Qualification</span>
-  </div> */}
+
   <div className='flex flex-col lg:flex-row  w-full justify-center items-center '>
-{/* Academic */}
-  {/* <div className="flex inset-0 z-[100] rounded-sm w-full  h-[230px] shadow-md    items-center    "> 
-    <div className='flex gap-5  w-full  max-w-[500px]  items-center  ' >
-    <div className='myPhoto w-[150px] h-[150px] bg-white rounded-full overflow-hidden'>
-    <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover' loading='lazy' alt="" srcset="" />
-    </div>
-    <div className='flex flex-col gap-3 text-white'>
-    <div className='heading text-lg  '>Academic Education </div>
-      <ul className=' text-sm '>
-        <li>Studied: BBA </li>
-        <li>Major Subject: Accounting</li>
-        <li>Institute: National University Of Bangladesh</li>
-      </ul>
-    </div>
-    </div>
-  </div> */}
-{/* MERN */}
 <div className='flex flex-col md:flex-row w-full   shadow-md rounded-sm  md:min-w-[500px] p-5 justify-between items-center '>
- 
+
   <div className=' certificate  flex rounded justify-center flex-wrap w-full max-w-[25rem]  overflow-hidden '>
    <div className='w-[90%] h-[auto] mt-5 overflow-hidden'>
    <img src="../assets/fakeCertificate.jpeg" className=' w-full h-full object-contain' loading='lazy' alt="" srcset="" />
@@ -552,44 +557,34 @@ and user-friendly solutions. Let's bring your idea into reality.
 
   <div className=' w-full flex flex-col gap-3 max-w-[500px]  lg:p-5 text-sm py-2 md:pl-5'>
   <h1 className='text-3xl md:text-4xl font-bold  text-white '> MERN Stack Course - <span className='text-blue-500'> Interactive Care</span></h1>
-  <div className='text-white tracking-widest '>
+  <div className='text-white tracking-wider '>
   I successfully completed an intensive course on the MERN stack from Interactive Care.
   This course provided comprehensive training on the full-stack development process using MongoDB, Express.js, React, and Node.js.
   </div>
   <div className='text-white p-2 text-center bg-blue-500 w-[259px] rounded-md mr-auto'>Learn more about Interactive Cares</div>
   </div>
   </div>
-
   </div>
-  {/* <div className="orb top-[50px] left-[50%]"></div>
-  <div className="orb bottom-[30px]"></div>
-  <div className="orb bottom-[0%] left-[70%]"></div> */}
 
   </section>
   <section className='min-h-[100vh] grid-lines3 pl-[20px]  flex w-full flex-col-reverse md:flex-row justify-center  items-center md:justify-between gap-3'>
   
-  <div  className='aboutME  max-w-[500px] w-full h-full  min-h-[400px] flex flex-col gap-5'>
-  <h1 className='font-bold md:text-4xl text-3xl text-white'> <span className='text-blue-500'>GET TO KNOW</span>  more about me</h1>
-  <div className='text-white  tracking-wider  p-1'>
-    I was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves.
-    I have graduated from <u>National university</u> Bangladesh in Accounting as a major subject.
-    When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene,    &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years.
-    We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong>
-   
-    
+  <div  className='aboutME   flex flex-col md:flex-row md:justify-between justify-center  w-full h-full md:max-w-[600px] max-w-[500px]  min-h-[400px] '>
 
+<Tabs />
   </div>
-  </div>
-  <div  className=' w-full max-w-[400px] h-[300px] md:mr-5 bg-white rounded-lg'>
+  <div  className='dp2 w-full max-w-[400px] h-[300px] md:mr-5 bg-white rounded-lg '>
 
 
   </div>
+
  
   </section>
-<div className=' py-5' >
+<div className=' py- 5' >
 <div className='text-xl sticky top-[10px] md:top-0 md:relative flex justify-start md:justify-start   mb-auto w-full items-center gap-2 '>
  <div className='customBorderRadius ml-[20px]  flex gap-5 w-[300px] pl-4 py-2 bg-[#ebe8e8]'>
    <FontAwesomeIcon icon={faTasks} className='' size='lg' />Key Topics Covered</div>
+   
  </div>
 
 <div>

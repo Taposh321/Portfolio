@@ -150,21 +150,6 @@ align-items: center;
     padding: 2px 10px;
     border: 1px solid lightgray;
 }
-.linearBlack {
-    background: rgba(2,11,39,1);
-    background: -moz-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
-    background: -webkit-radial-gradient(circle at center, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 50%);
-    background: radial-gradient(circle at center, rgba(208, 210, 213, 0.748) 10%,  rgba(139, 47, 47, 0) 40%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2d66",endColorstr="#020b27",GradientType=1); 
-   }
-   .linearBlack2{
-    background: rgb(12,45,102);
-    background: -moz-radial-gradient(circle at  50% 175px, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
-    background: -webkit-radial-gradient(circle at  50% 175px, rgba(12,45,102,1) 0%, rgba(2,11,39,1) 57%);
-    background: radial-gradient(circle at 50% 115px, rgba(12,45,102,1) 30%, rgba(2,11,39,1) 57%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2d66",endColorstr="#020b27",GradientType=1);
-
-}
 
 .dot{
     width: 5px;
@@ -176,7 +161,6 @@ align-items: center;
 .active{ background-color: lightgreen;}
 .photoContainer{ 
     background-image: radial-gradient(circle at center,  rgba(225, 225, 225, 1)  30%, rgba(2,11,39,1)  70% );
-
     background-repeat: no-repeat;
     background-position:right center;
     background-size: cover;
@@ -341,30 +325,80 @@ margin-top:0px;
   }
   .grid-lines {
     --s: 50px;  
-    --t:1px;  
+    --t:1px; 
+     animation:lightFlicker  1s 1 ease-out;
     background:
-    linear-gradient(to right,rgba(11, 11, 30,1) 60% ,rgba(246, 244, 244, 0)  ), 
+    linear-gradient(to right,rgba(11, 11, 30,1) 60% ,rgba(246, 244, 244, 0) ), 
     linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) 40% ), 
- 
     conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#284983 0%)
        0 0/var(--s) var(--s)  ,rgb(16, 30, 70);
   }
+  @keyframes lightFlicker {
+0%,100%{
+    background:
+    linear-gradient(to right,rgba(11, 11, 30,1) 60% ,rgba(246, 244, 244, 0)  ), 
+    linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) 40% ), 
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#284983 0%)
+       0 0/var(--s) var(--s)  ,rgb(16, 30, 70);
+}
+30%{
+    background:
+    linear-gradient(to right,rgba(11, 11, 30,1) 100% ,rgba(246, 244, 244, 0)  ), 
+    linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) 40% ), 
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#284983 0%)
+       0 0/var(--s) var(--s)  ,rgb(16, 30, 70);
+}
+33%{
+    background:
+    linear-gradient(to right,rgba(11, 11, 30,1) 60% ,rgba(246, 244, 244, 0)  ), 
+    linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) 40% ), 
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#284983 0%)
+       0 0/var(--s) var(--s)  ,rgb(16, 30, 70);
+}
+40%{
+    background:
+    linear-gradient(to right,rgba(11, 11, 30,1) 100% ,rgba(246, 244, 244, 0)  ), 
+    linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) 40% ), 
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#284983 0%)
+       0 0/var(--s) var(--s)  ,rgb(16, 30, 70);
+}
+  }
+  
+
   .grid-lines2 {
     --s: 50px;  
     --t:1px;  
+   
     background:
-    linear-gradient(to left,rgb(11, 11, 30) 10% ,rgba(246, 244, 244, 0) 40%),     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
-    linear-gradient(to bottom,rgb(11, 11, 30) 10% ,rgba(246, 244, 244, 0) 90% ), 
+    linear-gradient(to left,rgb(11, 11, 30) 10%,rgba(246, 244, 244, 0)),     /* url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat, */
+    linear-gradient(to bottom,rgb(11, 11, 30) 10% ,rgba(246, 244, 244, 0) 40% ), 
     linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) ), 
     conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#3f71c7  0)
        0 0/var(--s) var(--s)  ,rgb(9, 21, 55);
   }
+  /* @keyframes slideInLight{
+   0%{
+    background:
+    linear-gradient(to left,rgb(11, 11, 30) 0%,rgba(246, 244, 244, 0) 40%),   
+    linear-gradient(to bottom,rgb(11, 11, 30) 10% ,rgba(246, 244, 244, 0) 90% ), 
+    linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) ), 
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#3f71c7  0)
+       0 0/var(--s) var(--s)  ,rgb(9, 21, 55);   } 
+   100%{
+    background:
+    linear-gradient(to left,rgb(11, 11, 30) 60%,rgba(246, 244, 244, 0) 40%),    
+    linear-gradient(to bottom,rgb(11, 11, 30) 10% ,rgba(246, 244, 244, 0) 90% ), 
+    linear-gradient(to top,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) ), 
+    conic-gradient(from 92deg at var(--t) var(--t),#6d090900 25%,#3f71c7  0)
+       0 0/var(--s) var(--s)  ,rgb(9, 21, 55);   }
+
+    } */
   .grid-lines3 {
     --s: 50px;  
     --t:1px;  
     background:
     linear-gradient(to right,rgb(11, 11, 30) 50% ,rgba(87, 73, 73, 0) 100%),     url(../../assets/photo/heroPhoto3.png) 95% bottom no-repeat,
-    linear-gradient(to bottom,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) ), 
+    linear-gradient(to bottom,rgb(11, 11, 30) 1% ,rgba(246, 244, 244, 0) 40% ), 
     linear-gradient(to top,rgb(11, 11, 30) 10% ,#ffffff00 40%), 
     conic-gradient(from 92deg at var(--t) var(--t),#75626200 25%,#3f71c7 0)
        0 0/var(--s) var(--s)  ,rgb(9, 21, 55);
@@ -479,3 +513,31 @@ border-radius: 0px 100px 100px 0px;
 .text-3d:hover {
     text-shadow: 0 5px 20px rgba(139, 136, 131, 0.7), 0 2px 5px rgba(255, 0, 0, 0);
 }
+.dp2{
+    background-image: url(../../../public/assets/photo/mySetUp.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 30% 75% 70% 30% / 47% 49% 51% 50% ;
+    box-shadow:inset 5px 5px 20px rgb(48, 49, 49) ;
+    animation: ra 6s infinite linear;
+}
+@keyframes ra {
+    0%, 100% {
+      border-radius: 30% 70% 70% 30% / 47% 53% 53% 47%;
+    }
+    20% {
+      border-radius: 32% 68% 72% 28% / 45% 55% 55% 45%;
+    }
+    40% {
+      border-radius: 35% 65% 75% 25% / 42% 58% 58% 42%;
+    }
+    60% {
+      border-radius: 38% 62% 78% 22% / 40% 60% 60% 40%;
+    }
+    80% {
+      border-radius: 35% 65% 75% 25% / 44% 56% 56% 44%;
+    }
+  }
+  
