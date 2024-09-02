@@ -715,7 +715,7 @@ and user-friendly solutions. Let's bring your idea into reality.
     ${screenSize[0].height<=700?'hidden':'flex-grow'} 
     `}>
            <div className="w-full h-full relative flex  " >
-              <div className="z-[29] relative w-full flex-col overflow-hidden flex justify-center items-start  md:items-center pt-5 ">
+              <div className="z-[29] relative w-full flex-col overflow-hidden flex justify-center pl-[20px] items-start  md:items-center pt-5 ">
                <div className='flex flex-col gap-2'>
                <div className='text-3xl mr-auto text-white'>#Moments</div>
                <div className=" z-10 w-[400px]  max-h-[350px] grid auto-rows-2 grid-flow-dense grid-cols-2 gap-2  overflow-hidden">
