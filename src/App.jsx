@@ -1,5 +1,5 @@
 
-import React,{useState,useEffect} from "react"
+import {useState,useEffect} from "react"
 import NavBar from "./components/aboutMe/NavBar"
 import Hero from "./components/hero"
 import AboutMe from "./components/aboutMe/aboutMe"
@@ -41,7 +41,6 @@ function App(){
               <Hero>
             <Outlet />
             <Footer />
-
             </Hero>
 
             )

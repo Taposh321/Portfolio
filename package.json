@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "tailwind": "tailwindcss -i ./src/tailwind/input/tailwind.css -o ./src/tailwind/output/tailwind.css -w",
+    "tailwind": "tailwindcss -i ./public/tailwind/input/tailwind.css -o ./public/tailwind/output/tailwind.css -w",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

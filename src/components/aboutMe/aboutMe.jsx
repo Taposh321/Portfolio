@@ -1,11 +1,14 @@
 import React, { useState ,useEffect, useRef } from 'react';
-import Button from "../buttons/button1"
-import { useDispatch, useSelector } from 'react-redux';
-import { setHeight,setWidth } from '../../features/windowSize/windowSizeSlice';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook,faLinkedin,faGit,faTwitter, faGithub,faReact,faNodeJs} from '@fortawesome/free-brands-svg-icons';
 import {faArrowDown,faCircleUser,faLaptopCode ,faGraduationCap,faDatabase,faTasks,faStar,faArrowRight,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { setHeight,setWidth } from '../../features/windowSize/windowSizeSlice';
 import NavBar from './NavBar'
+import Button from "../buttons/button1"
+import {inView} from 'framer-motion'
+
 
 function Testimonials (){
   const [index,setIndex]=useState(0)
@@ -126,22 +129,14 @@ function Testimonials (){
   </div>
          </div>
     </div>
-
 </div>
-
-
 </div>
-
-
-</div>
-
-  
+</div> 
   </>)
 }
 function ContactForm(){
   const [input,setInput]=useState({email:"",massage:""})
 const handler=(data)=>{
-
 setInput({...input,[data.name]:data.value})
 }
   return(<>
@@ -182,7 +177,6 @@ function TrustedBy(){
 function ProjectSlider() {
   const [index, setIndex] = useState(0);
   const [width, setWidth] = useState(500);
-  
   const [slides,setSlides]=useState(
     [
       {
@@ -391,172 +385,51 @@ function Team(){
   </>)
 
 }
-
-function Tabs(){
-  const tabs=[
-"I was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves I have graduated from <b>National university</b> Bangladesh in Accounting as a major subject. When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene, &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years. We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong> "
-,
-"he was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves I have graduated from <b>National university</b> Bangladesh in Accounting as a major subject. When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene, &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years. We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong> "
-,
-"we was born in Bangladesh and also grew up there.We are a small family made of cares, sympathies and loves I have graduated from <b>National university</b> Bangladesh in Accounting as a major subject. When it comes to carrier, i have gathered experiences working in a few positions like cashier, seller, worker etc. Behind the scene, &lt;Codeing&gt; was one of my passions and i have been working in various platforms and clients since 2 years. We are a <span className='font-bold text-blue-500'>TEAM</span>, expert in web developing, working togather. <strong> We believe in talent.</strong> "
-];
-const [current,setCurrent]=useState(tabs[0])
- 
-  const icons=[faCircleUser,faGraduationCap,faLaptopCode]
-  
-  const handler=(i)=>{
- setCurrent(tabs[i])
+function Education(){
+    const interactiveCaresCertificate=useRef(null);
+    const mernStack=useRef(null);
+    const ICC= useRef(null);
+  const animate=(e)=>{
+    if(e.className=="mernStack"){
+      mernStack.current.style='transform:translateX(0)';
+      ICC.current.style='transform:translateY(0)';
+    }else{
+      interactiveCaresCertificate.current.style="opacity:1;"
+    }
   }
+  useEffect(()=>{
+    inView(mernStack.current,()=>{
+     animate(mernStack.current)
+    });
+    inView(interactiveCaresCertificate.current,()=>{
+      animate(interactiveCaresCertificate.current)
+     });
+
+  },[])
+
   return(<>
-  
-  <div className="flex flex-col max-w-[500px]   w-full justify-center items-start  gap-2 ">
-  <h1 className='font-bold md:text-4xl text-3xl text-white'> 
-    <span className='text-blue-500'>GET TO KNOW</span> more about me</h1>
-  <div className='text-white  tracking-wider  p-1'>
-   {
-   current
-   }
-   </div>
-  </div>
-   <div className="tab flex gap-4 text-white md:flex-col justify-start md:justify-center  items-center p-2">
-   {
-   
-   icons.map((e,i)=> (
-    <div key={i} onClick={()=>handler(i)} id={e.iconName} className={` ${ i==tabs.indexOf(current)? 'bg-[lightgray] text-[#343434]':''} transition-colors rounded-md p-2`}>
-      <FontAwesomeIcon className='pointer-events-none' icon={e} size='lg' />
-   </div>
-    
-   ))}
-   </div>
-  
-  </>)
-}
-
-function AboutMe(){
-   const useDis = useDispatch();
-   const screenSize = useSelector((states)=> states.windowSize);
-  
-   const heroText=useRef(null);
-   const moveHandler =(e) => {
-            const textRect =   heroText.current.getBoundingClientRect();
-            const textX = e.clientX - textRect.left;
-            const textY = e.clientY - textRect.top;
-
-            const centerX = textRect.width / 2;
-            const centerY = textRect.height / 2;
-
-            const rotateX = (centerY - textY) / 15;
-            const rotateY = (textX - centerX) / 15;
-            heroText.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      }
-
-       const leaveHandler= () => {
-          heroText.current.style.transform = `rotateX(0) rotateY(0)`;
-        };
-
-    useEffect(()=>{
-  const handler=()=>{
-    useDis(setWidth(window.innerWidth));
-    useDis(setHeight(window.innerHeight));
-    }  
-  
-window.addEventListener("resize",handler)
-handler()
-    },[]);
-    
-
-return (
-<>
-<div className={` relative  flex flex-col w-full  `}>
-  <section className=' relative p-0 m-0 hero flex flex-col w-full h-screen max-h-[1200px] ' >
-  <NavBar />
-   <div className={`flex ${  screenSize[0].width>=768 ?(screenSize[0].height<=700?'flex-row':"flex-row items-center") :'flex-col'}  w-full flex-1  relative  grid-lines`}>
-        {/*^ Responsive swicth between flex-row and flex-col depending on width and height^ */}
-
-     <section className= {`max-w-[600px] w-full  pl-[20px] ${screenSize[0].height<=700?'h-full justify-center ':' h-[400px] justify-end' }   flex flex-col `}>
-        <div  className="relative  text-container text-white 
-          max-w-[400px] my-5 " > 
-            <div ref={heroText} onMouseMove={moveHandler} onMouseLeave={leaveHandler} className='headingAboutMe  text-3d md:text-4xl text-3xl tracking-wider  font-bold'> 
-            Hi, This is <span> </span>  
-             <span className='text-red-500'>T</span>
-            <span className='text-yellow-400'>a</span>
-            <span className='text-green-300'>p</span>
-            osh, 
-        a full stack MERN web developer </div>
-  </div> 
-  <div className="aboutMe flex  max-w-[500px]  justify-center
-   items-stert  flex-col  w-full  rounded-md  ">  
-<div className='flex  flex-col items-center  text-white antialiased -tracking-tighter ' style={{fontSize:"12px"}}>
-I have 5 years of experances in 
-front-end and backend development as well passionate about building efficient, scalable
-and user-friendly solutions. Let's bring your idea into reality.
-</div>
-<div className='flex flex-col cta pt-5'>
-  <div className='flex'>
-{
-  <> 
-  <Button style={{color:"white",border:"1px solid lightgray",backgroundColor:"rgb(59,130,246)"}} text={"Contact me"}  />
-  <Button style={{color:"white",border:"1px solid lightgray",marginLeft:"10px"}} text={"Resume"}  />
-</>
-}
-</div>
-<div className='  text-sm  text-white  flex h-[50px]  gap-5  mt-[20px]   '>
-  <div className='relative follow h-full flex justify-center items-center  '> 
-     <FontAwesomeIcon className='icon-hover' icon={faFacebook} size='2xl' />
-  </div>
-  <div className='relative  follow h-full flex justify-center items-center  ' > 
-     <FontAwesomeIcon className='icon-hover' icon={faLinkedin}  size='2xl' />
-  </div>
-  <div className='relative  follow h-full flex justify-center items-center  '> 
-      <FontAwesomeIcon className='icon-hover' icon={faTwitter}  size='2xl'  />
-  </div>
-  <div className='relative  follow h-full flex justify-center items-center '> 
-     <FontAwesomeIcon className='icon-hover' icon={faGithub}  size='2xl'  />
-  </div> 
-</div>
-</div>
-</div> 
-</section>
-
-    <section className={` w-full md:flex
-    ${screenSize[0].height<=700?'hidden':'flex-grow'} 
-    `}>
-           <div className="w-full h-full relative flex  " >
-              <div className="z-[29] relative w-full overflow-hidden flex justify-center items-start  md:items-center pt-5 ">
-                 <div className='absolute bg-white light w-[300px] h-[300px] justify-center items-center  '></div>
-               <div className="dp z-10 w-[200px] h-[200px] md:w-[200px] md:h-[200px] overflow-hidden flex justify-center items-center">
-                   <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover' loading='lazy' alt="" srcset="" />
-               </div>
-              </div>
-           </div>  
- 
-    </section>
-
-    <div className='text-white text-sm absolute bottom-5  w-full flex flex-col justify-center items-center '>
-      <span>Scroll down</span>  <br />
-       <span className='arrow absolute'>  
-     <FontAwesomeIcon icon={faArrowDown} className='' size='sm' />
-    </span>
-    </div>
-    </div>
-  </section>
- <div className='education  w-full  flex flex-col  '>
-
-
+   <div className='education  w-full  flex flex-col  '>
   <section className='flex grid-lines2 min-h-[500px] flex-col w-full py-[40px] justify-center  relative '>
-
-  <div className='flex flex-col lg:flex-row  w-full justify-center items-center '>
-<div className='flex flex-col md:flex-row w-full   shadow-md rounded-sm  md:min-w-[500px] p-5 justify-between items-center '>
-
-  <div className=' certificate  flex rounded justify-center flex-wrap w-full max-w-[25rem]  overflow-hidden '>
+  
+  <div   className='interactiveCaresCourse  flex flex-col lg:flex-row  w-full justify-center items-center '>
+  <div className='flex flex-col md:flex-row w-full   shadow-md rounded-sm  md:min-w-[500px] p-5 justify-between items-center '>
+  <div ref={interactiveCaresCertificate} className=' certificate transition-opacity duration-700 opacity-0  flex rounded justify-center flex-wrap w-full max-w-[25rem]  overflow-hidden '>
    <div className='w-[90%] h-[auto] mt-5 overflow-hidden'>
    <img src="../assets/fakeCertificate.jpeg" className=' w-full h-full object-contain' loading='lazy' alt="" srcset="" />
-
    </div>
   </div>
 
   <div className=' w-full flex flex-col gap-3 max-w-[500px]  lg:p-5 text-sm py-2 md:pl-5'>
-  <h1 className='text-3xl md:text-4xl font-bold  text-white '> MERN Stack Course - <span className='text-blue-500'> Interactive Care</span></h1>
+  <div className='text-3xl md:text-4xl font-bold  text-white  flex  flex-wrap'> 
+    <div className='min-w-[290px] overflow-hidden'>
+      <div ref={mernStack} className='mernStack'>MERN Stack Course-</div>
+      </div>
+    <div className='text-blue-500  min-w-[250px] overflow-hidden'>
+      <div ref={ICC} className='ICC'>
+      Interactive Care
+    </div>
+    </div>
+    </div>
   <div className='text-white tracking-wider '>
   I successfully completed an intensive course on the MERN stack from Interactive Care.
   This course provided comprehensive training on the full-stack development process using MongoDB, Express.js, React, and Node.js.
@@ -567,20 +440,16 @@ and user-friendly solutions. Let's bring your idea into reality.
   </div>
 
   </section>
-  <section className='min-h-[100vh] grid-lines3 pl-[20px]  flex w-full flex-col-reverse md:flex-row justify-center  items-center md:justify-between gap-3'>
-  
-  <div  className='aboutME   flex flex-col md:flex-row md:justify-between justify-center  w-full h-full md:max-w-[600px] max-w-[500px]  min-h-[400px] '>
 
-<Tabs />
+  <section  className=' min-h-[100vh] grid-lines3 pl-[20px]  flex w-full flex-col-reverse md:flex-row justify-center  items-center md:justify-between gap-5'>
+  <div  className='aboutMe flex flex-col lg:flex-row md:justify-between justify-center  w-full h-full md:max-w-[600px] max-w-[500px]  min-h-[400px] '>
+  <Tabs />
   </div>
   <div  className='dp2 w-full max-w-[400px] h-[300px] md:mr-5 bg-white rounded-lg '>
-
-
   </div>
-
- 
   </section>
-<div className=' py- 5' >
+
+ <div className=' py-[100px]' >
 <div className='text-xl sticky top-[10px] md:top-0 md:relative flex justify-start md:justify-start   mb-auto w-full items-center gap-2 '>
  <div className='customBorderRadius ml-[20px]  flex gap-5 w-[300px] pl-4 py-2 bg-[#ebe8e8]'>
    <FontAwesomeIcon icon={faTasks} className='' size='lg' />Key Topics Covered</div>
@@ -666,8 +535,6 @@ and user-friendly solutions. Let's bring your idea into reality.
 
     <li>Building and deploying applications
      </li>
-
-
    </ul>
  </div>
 </div>
@@ -692,19 +559,198 @@ and user-friendly solutions. Let's bring your idea into reality.
    </ul>
  </div>
 </div>
-
   </div>
-
 </div>
-
-</div>
+ </div>
   <ProjectSlider />
-
   <Team />
-
 </div>
-<Testimonials />
-<ContactForm />
+  </>)
+}
+function Tabs(){
+  const tabs=[
+    "Growing up in Bangladesh with my parents, my childhood was filled with warmth, love, and the rich culture of my homeland. I was blessed with a caring family who nurtured my curiosity and taught me values like kindness, resilience, and hard work. From playing in green fields to celebrating our traditions, each day felt like an adventure. Family gatherings, laughter, and home-cooked meals are cherished memories that shaped who I am today.",
+"Although I graduated in Accounting with excellent results, my true passion is web development. My analytical skills from Accounting now help me build dynamic websites and applications. Driven by creativity and technology, I transitioned into web development, combining my structured mindset with a love for crafting efficient digital solutions.",
+"I have completed a course on MERN stack web development from Interactive Cares, a leading IT virtual platform. This comprehensive course equipped me with hands-on experience in building full-stack web applications using MongoDB, Express, React, and Node.js. Through this program, I gained practical skills in creating dynamic, responsive, and robust web solutions, enhancing my ability to work effectively in modern web development environments."
+];
+  const [current,setCurrent]=useState(tabs[0])
+  const icons=[faCircleUser,faGraduationCap,faLaptopCode]
+  const getToKnow = useRef(null);
+  const content = useRef(null);
+  const tab=useRef(null)
+  const handler=(i)=>{
+  setCurrent(tabs[i])
+  }
+  useEffect(()=>{
+
+    inView(getToKnow.current,()=>{
+     content.current.style.opacity="1"
+      content.current.style.marginTop="0px" 
+      document.querySelectorAll(".tab").forEach((e)=>{
+      e.style.opacity='1'
+     e.style.marginTop='0px'
+      })  
+    })
+    
+
+  },[])
+
+
+
+
+  return(<>
+  
+  <div className="flex flex-col max-w-[500px]   w-full justify-center items-start  gap-2 ">
+  <h1 className='font-bold md:text-4xl text-3xl text-white'> 
+    <span className='text-blue-500'>GET TO KNOW</span> more about me</h1>
+  <div ref={getToKnow} className=' tracking-wider text-white  overflow-hidden h-[15rem] md:h-[17rem] '>
+    <div ref={content} className='w-full h-full transition-all duration-[500ms] opacity-0 mt-[100px]'>
+    {
+   current
+   }
+    </div>
+   
+   </div>
+  </div>
+   <div className="tab flex gap-4 text-white lg:flex-col justify-center  items-center p-2 ">
+   {
+   
+   icons.map((e,i)=> (
+    <div key={i} onClick={()=>handler(i)} 
+    id={e.iconName} 
+   
+    className={` ${ i==tabs.indexOf(current)? ' bg-[lightgray] text-[#343434]':''} tab transition-all duration-500 opacity-0 mt-6  rounded-md p-2`}>
+     
+      <FontAwesomeIcon className='pointer-events-none' icon={e} size='lg' />
+   </div>
+    
+   ))}
+   </div>
+  
+  </>)
+}
+function AboutMe(){
+   const useDis = useDispatch();
+   const screenSize = useSelector((states)=> states.windowSize); 
+   const heroText=useRef(null);
+   const moveHandler =(e) => {
+            const textRect =   heroText.current.getBoundingClientRect();
+            const textX = e.clientX - textRect.left;
+            const textY = e.clientY - textRect.top;
+
+            const centerX = textRect.width / 2;
+            const centerY = textRect.height / 2;
+
+            const rotateX = (centerY - textY) / 15;
+            const rotateY = (textX - centerX) / 15;
+            heroText.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+    const leaveHandler= () => {
+          heroText.current.style.transform = `rotateX(0) rotateY(0)`;
+       };
+    useEffect(()=>{
+    const handler=()=>{
+    useDis(setWidth(window.innerWidth));
+    useDis(setHeight(window.innerHeight));
+    }  
+  
+window.addEventListener("resize",handler)
+handler()
+    },[]);
+return (
+<>
+<div className={` relative  flex flex-col w-full  `}>
+ 
+  <section className=' relative p-0 m-0 hero flex flex-col w-full h-screen max-h-[1200px] ' >
+  <NavBar />
+   <div className={`flex ${  screenSize[0].width>=768 ?(screenSize[0].height<=700?'flex-row':"flex-row items-center") :'flex-col'}  w-full flex-1  relative  grid-lines`}>
+        {/*^ Responsive swicth between flex-row and flex-col depending on width and height^ */}
+
+     <section className= {`max-w-[600px] w-full  pl-[20px] ${screenSize[0].height<=700?'h-full justify-center ':' h-[450px] justify-end' }   flex flex-col `}>
+        <div  className="relative  text-container text-white 
+          max-w-[400px] my-5 " > 
+            <div ref={heroText} onMouseMove={moveHandler} onMouseLeave={leaveHandler} className='headingAboutMe  text-3d md:text-4xl text-3xl tracking-wider font-extrabold '> 
+            Hi, This is <span> </span>  
+             <span className='text-red-500'>T</span>
+            <span className='text-yellow-400'>a</span>
+            <span className='text-green-300'>p</span>
+            osh, 
+        a full stack MERN web developer </div>
+  </div> 
+  <div className="aboutMe flex  max-w-[500px]  justify-center
+   items-stert  flex-col  w-full  rounded-md  ">  
+<div className='flex  flex-col items-center  text-white antialiased -tracking-tighter '>
+I have 5 years of experances in 
+front-end and backend development as well passionate about building efficient, scalable
+and user-friendly solutions. Let's bring your idea into reality.
+</div>
+<div className='flex flex-col cta pt-5'>
+  <div className='flex'>
+{
+  <> 
+  <Button style={{color:"white",border:"1px solid lightgray",backgroundColor:"rgb(59,130,246)"}} text={"Contact me"}  />
+  <Button style={{color:"white",border:"1px solid lightgray",marginLeft:"10px"}} text={"Resume"}  />
+</>
+}
+</div>
+<div className='  text-sm  text-white  flex h-[50px]  gap-5  mt-[20px]   '>
+  <div className='relative follow h-full flex justify-center items-center  '> 
+     <FontAwesomeIcon className='icon-hover' icon={faFacebook} size='2xl' />
+  </div>
+  <div className='relative  follow h-full flex justify-center items-center  ' > 
+     <FontAwesomeIcon className='icon-hover' icon={faLinkedin}  size='2xl' />
+  </div>
+  <div className='relative  follow h-full flex justify-center items-center  '> 
+      <FontAwesomeIcon className='icon-hover' icon={faTwitter}  size='2xl'  />
+  </div>
+  <div className='relative  follow h-full flex justify-center items-center '> 
+     <FontAwesomeIcon className='icon-hover' icon={faGithub}  size='2xl'  />
+  </div> 
+</div>
+</div>
+</div> 
+</section>
+
+    <section className={`  w-full md:flex
+    ${screenSize[0].height<=700?'hidden':'flex-grow'} 
+    `}>
+           <div className="w-full h-full relative flex  " >
+              <div className="z-[29] relative w-full flex-col overflow-hidden flex justify-center items-start  md:items-center pt-5 ">
+               <div className='flex flex-col gap-2'>
+               <div className='text-3xl mr-auto text-white'>#Moments</div>
+               <div className=" z-10 w-[400px]  max-h-[350px] grid auto-rows-2 grid-flow-dense grid-cols-2 gap-2  overflow-hidden">
+               <div className='w-full h-auto  rounded-md bg-white moment-photo'>
+               <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover  ' loading='lazy' alt="" srcset="" />
+               </div>
+               <div className='w-full h-auto rounded-md bg-white moment-photo'>
+               <img src="../assets/photo/heroPhoto.png" className='w-full h-full object-cover  ' loading='lazy' alt="" srcset="" />
+               </div>         
+                     <div className='w-full h-auto rounded-md bg-white moment-photo'>
+               <img src="../assets/photo/heroPhoto3.png" className='w-full h-full object-cover  ' loading='lazy' alt="" srcset="" />
+               </div>     
+                <div className='w-ful h-auto max-h-[350px] rounded-md  moment-photo'>
+               <img src="../assets/photo/mySetUp.png" className='w-full h-full object-cover  ' loading='lazy' alt="" srcset="" />
+               </div>
+
+               </div>
+               </div>
+               
+              </div>
+           </div>  
+ 
+    </section>
+
+    <div className='text-white text-sm absolute bottom-5  w-full flex flex-col justify-center items-center '>
+      <span>Scroll down</span>  <br />
+       <span className='arrow absolute'>  
+     <FontAwesomeIcon icon={faArrowDown} className='' size='sm' />
+    </span>
+    </div>
+    </div>
+  </section>
+ <Education />
+ <Testimonials />
+ <ContactForm />
 </div>
 
 </>
